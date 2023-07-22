@@ -1,5 +1,13 @@
 console.log('it works');
 
+const hamburger = document.querySelector('.hamburger');
+const navLink = document.querySelector('.nav__link');
+
+hamburger.addEventListener('click', () => {
+   navLink.classList.toggle('hide');
+});
+
+
 // custom shoe business page that allows users to check out the services we provide, as well as visuals that have currently been created.
 // users can add services to the cart, and check out by using paypal or sending an email regarding what they want. 
 // multi page (contact page, service page, previous work page, )
