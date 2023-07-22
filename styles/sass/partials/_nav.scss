@@ -2,14 +2,14 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding-top: 20px;
+   padding: 17px 0;
 }
 
 .logo {
    font-size: 1.8rem;
    color: rgb(5, 5, 116);
    padding-left: 20px;
-   width:10%;
+   width:80px;
    img {
       width: 100%;
    }
@@ -40,10 +40,12 @@
    display: block;
    text-align: center;
    padding: 10px 0;
+   color: black;
 }
 
 .nav__link a:hover {
-   background-color: lightcoral;
+   background-color: red;
+   color: white;
 }
 
 .hide {

@@ -252,14 +252,14 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 20px;
+  padding: 17px 0;
 }
 
 .logo {
   font-size: 1.8rem;
   color: rgb(5, 5, 116);
   padding-left: 20px;
-  width: 10%;
+  width: 80px;
 }
 .logo img {
   width: 100%;
@@ -290,10 +290,12 @@ html {
   display: block;
   text-align: center;
   padding: 10px 0;
+  color: black;
 }
 
 .nav__link a:hover {
-  background-color: lightcoral;
+  background-color: red;
+  color: white;
 }
 
 .hide {
@@ -309,13 +311,41 @@ header {
   background-size: cover;
   background-position: center;
 }
+.homeHeader h1 {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 6rem;
+  text-shadow: 1px 1px 1px black;
+  margin: 0;
+  padding-top: 14rem;
+}
+.homeHeader p {
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 1px 1px 1px black;
+  color: rgb(235, 231, 231);
+}
 
 main {
   height: 100vh;
 }
-
-footer p {
+main h2 {
   text-align: center;
+  font-size: 3rem;
+  padding-top: 1rem;
+}
+
+footer {
+  background-color: black;
+}
+footer p {
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 600px) {
