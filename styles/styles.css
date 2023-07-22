@@ -259,6 +259,10 @@ html {
   font-size: 1.8rem;
   color: rgb(5, 5, 116);
   padding-left: 20px;
+  width: 10%;
+}
+.logo img {
+  width: 100%;
 }
 
 .hamburger {
@@ -298,6 +302,12 @@ html {
 
 header {
   height: 100vh;
+}
+
+.homeHeader {
+  background-image: url(../assets/IMG_3047.JPG);
+  background-size: cover;
+  background-position: center;
 }
 
 main {
