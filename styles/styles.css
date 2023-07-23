@@ -272,18 +272,18 @@ html {
 
 .hamburger .line {
   display: block;
-  width: 40px;
+  width: 37px;
   height: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   background-color: black;
 }
 
 .nav__link {
   position: fixed;
-  width: 94%;
+  width: 100%;
   top: 5rem;
-  left: 18px;
-  background-color: lightblue;
+  left: 0;
+  background-color: white;
 }
 
 .nav__link a {
@@ -294,8 +294,10 @@ html {
 }
 
 .nav__link a:hover {
-  background-color: red;
+  background-color: rgb(235, 74, 74);
   color: white;
+  -webkit-transition: 0.35s all ease;
+  transition: 0.35s all ease;
 }
 
 .hide {
@@ -327,6 +329,29 @@ header {
   font-size: 3rem;
   text-shadow: 1px 1px 1px black;
   color: rgb(235, 231, 231);
+}
+.homeHeader .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.homeHeader .headerButtons button {
+  padding: 0.5rem 1rem;
+  margin: 2rem 1rem 0rem 1rem;
+  border-radius: 0;
+  border: none;
+}
+.homeHeader .headerButtons button:hover {
+  background-color: rgb(235, 74, 74);
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
 }
 
 main {

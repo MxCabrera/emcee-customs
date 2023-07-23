@@ -22,18 +22,18 @@
 
 .hamburger .line {
    display: block;
-   width: 40px;
+   width: 37px;
    height: 5px;
-   margin-bottom: 10px;
+   margin-bottom: 8px;
    background-color: black;
 }
 
 .nav__link {
    position: fixed;
-   width: 94%;
+   width: 100%;
    top: 5rem;
-   left: 18px;
-   background-color: lightblue;
+   left: 0;
+   background-color: white;
 }
 
 .nav__link a {
@@ -44,8 +44,9 @@
 }
 
 .nav__link a:hover {
-   background-color: red;
+   background-color: rgb(235, 74, 74);
    color: white;
+   transition: .35s all ease;
 }
 
 .hide {
