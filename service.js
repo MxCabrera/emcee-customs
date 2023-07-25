@@ -54,10 +54,9 @@ app.services = [
    },
 ];
 
+// add listeners function that is called by app.init
 app.addListeners = () => {
-      console.log(app.service);
       app.services.forEach((service) => {
-         console.log(service)
          const newListItem = document.createElement('li');
          newListItem.classList.add('services');
          // newListItem.setAttribute('data-aos', 'fade-up');

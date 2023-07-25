@@ -36,11 +36,19 @@
    background-color: white;
 }
 
-.nav__link a {
-   display: block;
-   text-align: center;
-   padding: 10px 0;
-   color: black;
+.nav__link {
+   a {
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      color: black;
+   }
+   .socials {
+      display: inline;
+      a {
+         padding: .5rem;
+      }
+   }
 }
 
 .nav__link a:hover {

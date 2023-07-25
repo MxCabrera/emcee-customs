@@ -292,6 +292,12 @@ html {
   padding: 10px 0;
   color: black;
 }
+.nav__link .socials {
+  display: inline;
+}
+.nav__link .socials a {
+  padding: 0.5rem;
+}
 
 .nav__link a:hover {
   background-color: rgb(235, 74, 74);
@@ -368,6 +374,14 @@ footer p {
   text-align: center;
   color: white;
   text-transform: uppercase;
+}
+
+.designPic {
+  width: 80%;
+  margin: 0 auto;
+}
+.designPic img {
+  width: 100%;
 }
 
 @media screen and (min-width: 600px) {
