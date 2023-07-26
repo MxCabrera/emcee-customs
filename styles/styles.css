@@ -362,6 +362,16 @@ main h2 {
   font-size: 3rem;
   padding-top: 1rem;
 }
+main .instaFeed {
+  margin-top: 3rem;
+  height: 100vh;
+}
+main .instaFeed h3 {
+  font-size: 3rem;
+}
+main .instaFeed h3 a {
+  color: black;
+}
 
 footer {
   background-color: black;

@@ -6,8 +6,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./styles/styles.css">
    <script src="https://kit.fontawesome.com/c9714a9747.js" crossorigin="anonymous"></script>
-   <link rel="icon" type="image/x-icon" href="./assets/A.png">
-   <title>MC | Emcee Customs</title>
+   <link type="image/png" href="./assets/A.png" rel="icon">
+   <title> MC | Emcee Customs </title>
 </head>
 <body>
    <nav class="nav">
@@ -37,8 +37,12 @@
          <p>Customization & Restoration</p>
          <p>hosting the best quality kicks!</p>
          <div class="flex headerButtons">
-            <a href="#" class="design">gallery</a>
-            <a href="contact.html" class="contact">contact</a>
+            <button>
+               <a href="portfolio.html" class="design">gallery</a>
+            </button>
+            <button>
+               <a href="contact.html" class="contact">contact</a>
+            </button>
          </div>
       </div>
    </header>
@@ -60,9 +64,30 @@
    </main>
    <footer>
       <div class="wrapper">
-         <p>miguel cabrera 2023</p>
+         <p><a href="https://mcabrera.netlify.app/">mcabrera 2023</a></p>
       </div>
    </footer>
+   <script type="module">
+
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+         apiKey: "AIzaSyAowHsEsU-cGPNpSHfocdVX5pCMGRWRCus",
+         authDomain: "emcee-customs.firebaseapp.com",
+         projectId: "emcee-customs",
+         storageBucket: "emcee-customs.appspot.com",
+         messagingSenderId: "223968939213",
+         appId: "1:223968939213:web:0db3abaeee024b9750ad84"
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+   </script>
 </body>
 <script src="./script.js"></script>
 </html>

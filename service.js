@@ -4,13 +4,15 @@ const app = {}
 app.hamburger = document.querySelector('.hamburger');
 app.navLink = document.querySelector('.nav__link');
 
-
+// connecting to serviceContainer element
 app.service = document.querySelector('.serviceContainer');
 
+// menu drop down event listener
 app.hamburger.addEventListener('click', () => {
    app.navLink.classList.toggle('hide');
 });
 
+// services array that contain information & prices of each product.
 app.services = [
    {
       name: 'Basic Cleaning',
@@ -56,32 +58,32 @@ app.services = [
 
 // add listeners function that is called by app.init
 app.addListeners = () => {
-      app.services.forEach((service) => {
-         const newListItem = document.createElement('li');
-         newListItem.classList.add('services');
-         // newListItem.setAttribute('data-aos', 'fade-up');
-         newListItem.innerHTML = `
-      <div class="serviceName">
-      <h2 class="customName">${service.name}</h2>
-      </div>
-      <div class="serviceDescrip">
-      <p>${service.description}</p>
-      <p> Price: ${service.price}</p>
-      </div>
-      <div class="serviceButtons">
-      <button>Add to cart</button>
-      <button>Contact Us</button>
-      </div>
-      `
-         app.service.appendChild(newListItem);
-         console.log(newListItem)
-      });
-}
+   app.services.forEach((service) => {
+      const newListItem = document.createElement('li');
+      newListItem.classList.add('services');
+      // newListItem.setAttribute('data-aos', 'fade-up');
+      newListItem.innerHTML = `
+   <div class="serviceName">
+   <h2 class="customName">${service.name}</h2>
+   </div>
+   <div class="serviceDescrip">
+   <p>${service.description}</p>
+   <p> Price: ${service.price}</p>
+   </div>
+   <div class="serviceButtons">
+   <button class="eCart">Add to cart</button>
+   <button>Contact Us</button>
+   </div>
+   `
+   app.service.appendChild(newListItem);
+   console.log(newListItem);
+   });
+};
 
 
 app.init = () => {
    app.addListeners();
-}
+};
 
 
-app.init()
+app.init();
