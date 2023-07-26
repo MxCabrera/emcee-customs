@@ -75,7 +75,7 @@ app.addListeners = () => {
       `
          app.service.appendChild(newListItem);
          console.log(newListItem)
-      })
+      });
 }
 
 

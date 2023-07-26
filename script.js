@@ -17,6 +17,7 @@ app.cart.addEventListener('click', () => {
    console.log('hey you reached the e-cart!')
 });
 
+
 // gallery portfolio array for later use
 app.gallerys = [
    {
@@ -46,9 +47,13 @@ app.gallerys = [
 
 
 app.galleryAppend = () => {
+
    app.gallerys.forEach((design) => {
+
       const firstListItem = document.createElement('li');
+
       firstListItem.classList.add('design');
+
       firstListItem.innerHTML = `
       <div class="designPic">
       <img src="${design.image}" alt="${design.name}"
@@ -60,13 +65,24 @@ app.galleryAppend = () => {
       <p>${design.description}</p>
       </div>
       <div class="serviceButtons">
-      <button>Add to cart</button>
-      <button>Contact Us</button>
+      <button>
+      <a href="#" class="addCart${counter}">Add to cart</a>
+      </button>
+      <button>
+         <a href="contact.html">Contact Us</a>
+      </button>
       </div>
       `
       app.gallery.appendChild(firstListItem);
    });
+   
+   app.addCart.addEventListener('click', () => {
+      console.log('hey you added to the e-cart!')
+   });
 };
+
+
+
 
 app.addListeners = () => {
    app.galleryAppend()
@@ -102,4 +118,10 @@ app.init();
 
 
 
-// pseudo code
+// pseudo code for the e-cart
+// on click that will make the pop up modal appear
+// call the firebase and get the data
+// fire off the data found and append it to the empty container e-cart
+// should have a delete button that will splice or remove the specific item from the cart array
+
+// stretch goals: + / - the product in the ecart if they want to add another item thats already in the cart
