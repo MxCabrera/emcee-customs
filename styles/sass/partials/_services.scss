@@ -1,0 +1,19 @@
+h1 {
+   font-size: 3rem;
+}
+
+main {
+   .serviceContainer {
+      .services {
+         width: 50%;
+      }
+   }
+}
+
+.eCart,
+.contactButton {
+   background-color: grey;
+   color: white;
+   padding: 1rem;
+   border: none;
+}

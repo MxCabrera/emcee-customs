@@ -72,13 +72,21 @@ app.addListeners = () => {
    </div>
    <div class="serviceButtons">
    <button class="eCart">Add to cart</button>
-   <button>Contact Us</button>
+   <button class="contactButton">Contact Us</button>
    </div>
    `
    app.service.appendChild(newListItem);
    console.log(newListItem);
+
+   app.contactButton = document.querySelector('.contactButton');
+   
+   app.contactButton.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+   })
    });
 };
+
+
 
 
 app.init = () => {

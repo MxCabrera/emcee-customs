@@ -1,0 +1,33 @@
+.wrapper {
+   max-width: 1400px;
+   width: 90%;
+   margin: 0 auto;
+}
+
+.flex {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+
+* {
+   margin: 0;
+   padding: 0;
+   text-decoration: none;
+   list-style: none;
+   scroll-behavior: smooth;
+   // overflow: hidden;
+   // background-color: blue;
+   font-weight: 400;
+   transition: all 2s ease;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+

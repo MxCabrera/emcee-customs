@@ -235,11 +235,42 @@ html {
   overflow: hidden;
 }
 
+.wrapper {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
+  scroll-behavior: smooth;
+  font-weight: 400;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .nav {
@@ -359,8 +390,11 @@ html {
 
 main h2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   padding-top: 1rem;
+}
+main .howToOrder {
+  background-color: lightgray;
 }
 main .instaFeed {
   margin-top: 3rem;
@@ -389,6 +423,22 @@ footer p {
 }
 .designPic img {
   width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+main .serviceContainer .services {
+  width: 50%;
+}
+
+.eCart,
+.contactButton {
+  background-color: grey;
+  color: white;
+  padding: 1rem;
+  border: none;
 }
 
 @media screen and (min-width: 600px) {
