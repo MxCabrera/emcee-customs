@@ -71,8 +71,8 @@ app.addListeners = () => {
    <p> Price: ${service.price}</p>
    </div>
    <div class="serviceButtons">
-   <button class="eCart">Add to cart</button>
-   <button class="contactButton">Contact Us</button>
+   <button class="addCart">Add to cart</button>
+   <button class="contactButton"> Contact Us</button>
    </div>
    `
    app.service.appendChild(newListItem);
@@ -85,7 +85,6 @@ app.addListeners = () => {
    })
    });
 };
-
 
 
 

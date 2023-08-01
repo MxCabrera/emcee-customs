@@ -8,6 +8,8 @@ app.hamburger = document.querySelector('.hamburger');
 app.navLink = document.querySelector('.nav__link');
 app.gallery = document.querySelector('.galleryContainer');
 app.cart = document.querySelector('.eCart')
+app.restored = document.querySelector('.restorationsBox');
+
 
 // on click that adds a hide class to element
 app.hamburger.addEventListener('click', () => {
@@ -105,7 +107,7 @@ app.gallerys = [
    },
    {
       name: 'Blue Cherry Blossoms AF1 Low',
-      mainImage: './assets/custom/AF1CherryBlossoms/IMG_2189-min.JPG',
+      mainImage: './assets/custom/AF1CherryBlossoms/IMG_2176-min.JPG',
       images: [
          './assets/custom/AF1CherryBlossoms/IMG_2174-min.JPG',
          './assets/custom/AF1CherryBlossoms/IMG_2176-min.JPG',
@@ -123,7 +125,7 @@ app.gallerys = [
    },
    {
       name: 'PokeMon x Vaporeon x Lapras AF1 Low',
-      mainImage: './assets/custom/AF1WaterPokemon/IMG_2637.JPG',
+      mainImage: './assets/custom/AF1WaterPokemon/IMG_2645.JPG',
       images: [
          './assets/custom/AF1WaterPokemon/IMG_2637.JPG',
          './assets/custom/AF1WaterPokemon/IMG_2640.JPG',
@@ -143,7 +145,7 @@ app.gallerys = [
    },
    {
       name: 'Mint Paisley Print AF1 Low',
-      mainImage: './assets/custom/AF1Paisley/IMG_3791.JPG',
+      mainImage: './assets/custom/AF1Paisley/IMG_3792.JPG',
       images: [
          './assets/custom/AF1Paisley/IMG_3791.JPG',
          './assets/custom/AF1Paisley/IMG_3792.JPG',
@@ -161,7 +163,7 @@ app.gallerys = [
    },
    {
       name: 'Red Riot x Kendo Rappa x My Hero Adidas',
-      mainImage: './assets/custom/AdidasMyHero/IMG_2120-min.JPG',
+      mainImage: './assets/custom/AdidasMyHero/IMG_2218-min.JPG',
       images: [
          './assets/custom/AdidasMyHero/IMG_2120-min.JPG',
          './assets/custom/AdidasMyHero/IMG_2122-min.JPG',
@@ -180,7 +182,7 @@ app.gallerys = [
    },
    {
       name: 'Takashi POM x OVO Collab AF1 Low',
-      mainImage: './assets/custom/AF1TakashiPom/IMG_2147.JPG',
+      mainImage: './assets/custom/AF1TakashiPom/IMG_2301.JPG',
       images: [
          './assets/custom/AF1TakashiPom/IMG_2147.JPG',
          './assets/custom/AF1TakashiPom/IMG_2148.JPG',
@@ -201,7 +203,7 @@ app.gallerys = [
    },
    {
       name: 'Bart Simpson x CamRon x Donut Off the Wall Vans',
-      mainImage: './assets/custom/VansBartSimpson/IMG_2252.JPG',
+      mainImage: './assets/custom/VansBartSimpson/IMG_2286.JPG',
       images: [
          './assets/custom/VansBartSimpson/IMG_2252.JPG',
          './assets/custom/VansBartSimpson/IMG_2259.JPG',
@@ -229,7 +231,7 @@ app.gallerys = [
    },
    {
       name: 'Abomidable Snowman x Winter Sports Nike Blazers',
-      mainImage: './assets/custom/NikeSnowman/IMG_2800.JPG',
+      mainImage: './assets/custom/NikeSnowman/IMG_2872.JPG',
       images: [
          './assets/custom/NikeSnowman/IMG_2800.JPG',
          './assets/custom/NikeSnowman/IMG_2856.JPG',
@@ -253,7 +255,7 @@ app.gallerys = [
    },
    {
       name: 'Floral Rose Concept Design on High Top Boots',
-      mainImage: './assets/custom/RoseBoots/IMG_2537.JPG',
+      mainImage: './assets/custom/RoseBoots/IMG_2555.JPG',
       images: [
          './assets/custom/RoseBoots/IMG_2537.JPG',
          './assets/custom/RoseBoots/IMG_2542.JPG',
@@ -268,7 +270,7 @@ app.gallerys = [
    },
    {
       name: 'Jordan 1 Conceptual Design on Bicycle shoes',
-      mainImage: './assets/custom/NikeBikeShoe/IMG_3614.JPG',
+      mainImage: './assets/custom/NikeBikeShoe/IMG_3625.JPG',
       images: [
          './assets/custom/NikeBikeShoe/IMG_3614.JPG',
          './assets/custom/NikeBikeShoe/IMG_3615.JPG',
@@ -291,23 +293,6 @@ app.gallerys = [
       description: `A custom hand painted drawing of a Jordan 1 conceptual design on a base bicycle shoe`
    },
    {
-      name: 'Butterfly x Flower AF1 Low',
-      mainImage: './assets/custom/AF1Butterfly/IMG_3904-min.JPG',
-      images: [
-         './assets/custom/AF1Butterfly/IMG_3904-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3905-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3906-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3907-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3908-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3909-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3910-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3911-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3912-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3913-min.JPG',
-      ],
-      description: `A custom hand painted drawing of a butterfly and flower concept design`
-   },
-   {
       name: 'Tanjiro x Nezuko x Demonslayer AF1 Low',
       mainImage: './assets/custom/AF1Demonslayer/IMG_2404-min.JPG',
       images: [
@@ -326,8 +311,25 @@ app.gallerys = [
       description: `A custom hand painted drawing of Tanjiro and Nezuko created using the art design from the end credits of the upcoming anime, "Demonslayer"`
    },
    {
+      name: 'Butterfly x Flower AF1 Low',
+      mainImage: './assets/custom/AF1Butterfly/IMG_3909-min.JPG',
+      images: [
+         './assets/custom/AF1Butterfly/IMG_3904-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3905-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3906-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3907-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3908-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3909-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3910-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3911-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3912-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3913-min.JPG',
+      ],
+      description: `A custom hand painted drawing of a butterfly and flower concept design`
+   },
+   {
       name: 'Killua x HunterxHunter AF1 Low',
-      mainImage: './assets/custom/AF1KilluaxHunter/IMG_3914-min.JPG',
+      mainImage: './assets/custom/AF1KilluaxHunter/IMG_3922-min.JPG',
       images: [
          './assets/custom/AF1KilluaxHunter/IMG_3914-min.JPG',
          './assets/custom/AF1KilluaxHunter/IMG_3915-min.JPG',
@@ -353,7 +355,7 @@ app.gallerys = [
    },
    {
       name: 'OVO x Raptors x Philippines Design AF1 Low',
-      mainImage: './assets/custom/AF1TorontoFilipino/IMG_2438.JPG',
+      mainImage: './assets/custom/AF1TorontoFilipino/IMG_2450.JPG',
       images: [
          './assets/custom/AF1TorontoFilipino/IMG_2438.JPG',
          './assets/custom/AF1TorontoFilipino/IMG_2439.JPG',
@@ -405,7 +407,7 @@ app.gallerys = [
    },
    {
       name: 'University Of North Carolina AF1 Low Concept',
-      mainImage: './assets/custom/AF1UncBlue/IMG_3775.JPG',
+      mainImage: './assets/custom/AF1UncBlue/IMG_3776.JPG',
       images: [
          './assets/custom/AF1UncBlue/IMG_3775.JPG',
          './assets/custom/AF1UncBlue/IMG_3776.JPG',
@@ -428,7 +430,7 @@ app.gallerys = [
    },
    {
       name: 'San x Moro x Princess Mononoke Nike Slides',
-      mainImage: './assets/custom/NikeMononoke/IMG_3461.JPG',
+      mainImage: './assets/custom/NikeMononoke/IMG_3464.JPG',
       images: [
          './assets/custom/NikeMononoke/IMG_3461.JPG',
          './assets/custom/NikeMononoke/IMG_3462.JPG',
@@ -443,7 +445,7 @@ app.gallerys = [
    },
    {
       name: 'Philippines Flag x Sampaguita Flower Custom',
-      mainImage: './assets/custom/PhilippinesFlag/IMG_3469.JPG',
+      mainImage: './assets/custom/PhilippinesFlag/IMG_3472.JPG',
       images: [
          './assets/custom/PhilippinesFlag/IMG_3469.JPG',
          './assets/custom/PhilippinesFlag/IMG_3470.JPG',
@@ -457,7 +459,7 @@ app.gallerys = [
    },
    {
       name: 'Mickey Mouse Customs',
-      mainImage: './assets/custom/MickeyMouse/IMG_3456.JPG',
+      mainImage: './assets/custom/MickeyMouse/IMG_3460.JPG',
       images: [
          './assets/custom/MickeyMouse/IMG_3456.JPG',
          './assets/custom/MickeyMouse/IMG_3457.JPG',
@@ -664,22 +666,83 @@ app.restore = [
 
 
 app.galleryAppend = () => {
-
+   let counter = 0;
    app.gallerys.forEach((design) => {
 
       const firstListItem = document.createElement('li');
-
-      firstListItem.classList.add('design');
-      console.log(design.mainImage)
+      firstListItem.classList.add(`design${counter}`);
+      firstListItem.setAttribute('id',`modal`);
+      firstListItem.classList.add(`design`);
+      // console.log(design.mainImage)
       firstListItem.innerHTML = `
       <div class="designPic">
-      <img src="${design.mainImage}" alt="${design.name}"
+      <img class="customPic" src="${design.mainImage}" alt="${design.name}"
       </div>
-      <div class="designName">
-      <h2 class="customName">${design.name}</h2>
+      `
+      app.gallery.appendChild(firstListItem);
+
+      ///////////////////////////
+
+      app.modal = document.getElementById('myModal')
+      app.btn = document.getElementById('modal')
+      app.span = document.querySelector('.close');
+      // When the user clicks the button, open the modal 
+      app.btn.addEventListener('click',() => {
+         modal.style.display = "block";
+         console.log('hey');
+      })
+      // When the user clicks on <span> (x), close the modal
+      app.span.addEventListener('click',() => {
+         modal.style.display = "none";
+      })
+      window.addEventListener('click', (e)=>{
+         if(e.target == modal) {
+            modal.style.display = 'none';
+         }
+      })
+
+      // maybe push the data into a variable in the global scope to access it later.
+      // in this case, push the picture, with specific class and data that the user clicked on into the variable, which can then be used to manipulate that isolated array of data.
+      // the whole point of this is to be able to create a pop up modal with information and extra photos of the specific shoe that the user clicked on. 
+
+
+      
+      ///////////////////////////
+
+      app.customPic = document.querySelector(`.design${counter}`);
+      app.customPic.addEventListener('click',() => {
+         console.log(`you've clicked on ${firstListItem.className}`)
+      })
+      counter++;
+   });
+
+   // app.addCart = document.querySelector('.addCart');
+
+   // app.addCart.addEventListener('click', () => {
+   //    console.log('hey you added to the e-cart!')
+   // });
+
+};
+
+
+// callRestore function that appends the restoration gallery to DOM.
+app.callRestore = () => {
+   // forEach method on the array of restorations
+   app.restore.forEach((fix)=>{
+      // html element creation storing in variable declaration 
+      const secondListItem = document.createElement('li');
+      // adding a className to the li element
+      secondListItem.classList.add('restored');
+      // inserting content into the innerHTML of the element
+      secondListItem.innerHTML = `
+      <div class="restorePic">
+      <img src="${fix.mainImage}" alt="${fix.name}"
       </div>
-      <div class="designDescrip">
-      <p>${design.description}</p>
+      <div class="restoreName">
+      <h2 class="customName">${fix.name}</h2>
+      </div>
+      <div class="restoreDescrip">
+      <p>${fix.description}</p>
       </div>
       <div class="serviceButtons">
       <button>
@@ -690,17 +753,16 @@ app.galleryAppend = () => {
       </button>
       </div>
       `
-      app.gallery.appendChild(firstListItem);
+      // appending the li element as a child to the section targeted.
+      app.restored.appendChild(secondListItem);
    });
-
-   // app.addCart.addEventListener('click', () => {
-   //    console.log('hey you added to the e-cart!')
-   // });
 };
 
-
+// addListeners function that is called by app.init(). This sets off the other functions onces user enters page.
 app.addListeners = () => {
+   // calls 2 functions that append data to DOM.
    app.galleryAppend();
+   app.callRestore();
 };
 
 app.init = () => {
@@ -709,3 +771,24 @@ app.init = () => {
 };
 
 app.init();
+
+
+//      firstListItem.innerHTML = `
+      // <div class="designPic">
+      // <img src="${design.mainImage}" alt="${design.name}"
+      // </div>
+      // <div class="designName">
+      // <h2 class="customName">${design.name}</h2>
+      // </div>
+      // <div class="designDescrip">
+      // <p>${design.description}</p>
+      // </div>
+      // <div class="serviceButtons">
+      // <button>
+      // <a href="#" class="addCart">Add to cart</a>
+      // </button>
+      // <button>
+      //    <a href="contact.html">Contact Us</a>
+      // </button>
+      // </div>
+      // `
