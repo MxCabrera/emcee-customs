@@ -9,6 +9,7 @@ app.navLink = document.querySelector('.nav__link');
 app.gallery = document.querySelector('.galleryContainer');
 app.cart = document.querySelector('.eCart')
 app.restored = document.querySelector('.restorationsBox');
+app.isolateShoe = [];
 
 
 // on click that adds a hide class to element
@@ -668,39 +669,65 @@ app.restore = [
 app.galleryAppend = () => {
    let counter = 0;
    app.gallerys.forEach((design) => {
-
+      
       const firstListItem = document.createElement('li');
       firstListItem.classList.add(`design${counter}`);
-      firstListItem.setAttribute('id',`modal`);
+      firstListItem.setAttribute('id',`theModal${counter}`);
       firstListItem.classList.add(`design`);
       // console.log(design.mainImage)
       firstListItem.innerHTML = `
       <div class="designPic">
-      <img class="customPic" src="${design.mainImage}" alt="${design.name}"
+      <img class="customPic${counter}" src="${design.mainImage}" alt="${design.name}"
       </div>
       `
       app.gallery.appendChild(firstListItem);
 
       ///////////////////////////
 
-      app.modal = document.getElementById('myModal')
-      app.btn = document.getElementById('modal')
-      app.span = document.querySelector('.close');
-      // When the user clicks the button, open the modal 
-      app.btn.addEventListener('click',() => {
-         modal.style.display = "block";
-         console.log('hey');
-      })
-      // When the user clicks on <span> (x), close the modal
-      app.span.addEventListener('click',() => {
-         modal.style.display = "none";
-      })
-      window.addEventListener('click', (e)=>{
-         if(e.target == modal) {
-            modal.style.display = 'none';
-         }
+
+      app.modal = document.getElementById('myModal');
+      // console.log(app.modal);
+      app.btn = document.getElementById(`theModal${counter}`);
+
+      app.shoeModal = document.querySelector('.shoeData');
+      
+   
+      const shoeInfo = document.createElement('li');
+      shoeInfo.classList.add('shoeInformation');
+      shoeInfo.innerHTML = `
+         <div class="infoBox">
+            <h3>${design.name}</h3>
+            <p>${design.description}</p>
+         </div>
+      `
+
+      app.shoeModal.appendChild(shoeInfo);
+
+      app.btn.addEventListener('click', () => {
+         // console.log('clicked')
+         app.shoeModal
+         app.modal.style.display = 'block';
       })
 
+      app.span = document.querySelector('.close');
+
+      app.span.addEventListener('click', () => {
+         app.modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (e) => {
+         // console.log(e.target.classList.contains(`customPic0`))
+         const hasClass = e.target.classList.contains(`customPic1`);
+         if (e.target == app.modal) {
+            app.modal.style.display = 'none';
+         }
+
+         if(hasClass){
+            console.log('yes');
+         } else {
+            console.log('no')
+         }
+      })
       // maybe push the data into a variable in the global scope to access it later.
       // in this case, push the picture, with specific class and data that the user clicked on into the variable, which can then be used to manipulate that isolated array of data.
       // the whole point of this is to be able to create a pop up modal with information and extra photos of the specific shoe that the user clicked on. 
@@ -715,6 +742,7 @@ app.galleryAppend = () => {
       })
       counter++;
    });
+
 
    // app.addCart = document.querySelector('.addCart');
 

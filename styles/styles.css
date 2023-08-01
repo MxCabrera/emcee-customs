@@ -273,6 +273,16 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+  font-family: "Archivo", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -343,7 +353,7 @@ a {
 
 .homeHeader {
   height: 100vh;
-  background-image: url(../assets/IMG_3047.JPG);
+  background-image: url(../assets/);
   background-size: cover;
   background-position: center;
 }
@@ -415,6 +425,10 @@ footer p {
   text-align: center;
   color: white;
   text-transform: uppercase;
+}
+
+header .gallerySection .title {
+  text-align: center;
 }
 
 .galleryContainer {
