@@ -401,7 +401,28 @@ p {
 }
 
 main .about {
-  height: 70vh;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+main .about .aboutSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+main .about .aboutSection .aboutPic {
+  width: 30%;
+}
+main .about .aboutSection .aboutPic img {
+  width: 100%;
+}
+main .about .aboutSection p {
+  width: 70%;
+  padding-left: 2rem;
+  padding-right: 1rem;
 }
 main h2 {
   text-align: center;
@@ -426,7 +447,6 @@ main .howToOrder .wrapper .restoreContainer {
 }
 main .instaFeed {
   margin-top: 3rem;
-  height: 100vh;
 }
 main .instaFeed h3 {
   font-size: 3rem;
@@ -595,6 +615,7 @@ header .gallerySection .title {
   color: white;
   text-shadow: 1px 1px 1px black;
   padding-top: 2rem;
+  margin-top: 0;
 }
 
 .contactForm {
