@@ -16,7 +16,7 @@ app.cart = document.querySelector('.eCart');
 // connecting modal html element to a variable
 app.modal = document.getElementById('myModal');
 app.span = document.querySelector('.close');
-app.shoeModal = document.querySelector('.shoeData');
+// app.shoeModal = document.querySelector('.shoeData');
 
 // on click that adds a hide class to element
 app.hamburger.addEventListener('click', () => {

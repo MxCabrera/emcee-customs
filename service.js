@@ -4,6 +4,9 @@ const app = {}
 app.hamburger = document.querySelector('.hamburger');
 app.navLink = document.querySelector('.nav__link');
 
+app.modal = document.getElementById('myModal');
+app.span = document.querySelector('.close');
+app.serviceModal = document.querySelector('.serviceData');
 // connecting to serviceContainer element
 app.service = document.querySelector('.serviceContainer');
 
@@ -18,81 +21,199 @@ app.services = [
       name: 'Basic Cleaning',
       description: `Base cleaning session`,
       price: '$40.00',
+      cost: 40,
+      code: 'bc'
    },
    {
       name: 'Deep Cleaning',
       description: `Deeper cleaning session, helps remove all the dirt and grime in the hard the reach areas as well as the inside & bottom sole`,
       price: '$55.00',
+      cost: 55,
+      code: 'dc'
    },
    {
       name: 'Sole Icing',
       description: `Icing the sole of your shoes. Using a solution, it will turn your yellow'd soles back to its transparent icy blue form`,
       price: '$20.00/per session',
+      cost: 20,
+      code: 'si'
    },
    {
       name: 'Re-paint touch ups',
       description: `Service provided to areas of the shoe where the paint has scratched off or lost its color during use. Will go through process of initial coat removal, sanding, color-matching, painting, and acrylic finisher `,
       price: '$25.00/per shoe',
+      cost: 25,
+      code: 'rpt'
    },
    {
       name: 'Re-paint sections',
       description: `Service provided to areas of the shoe where a large section of paint has scratched off or lost its color during use. Will go through process of initial coat removal, sanding, color-matching, painting, and acrylic finisher `,
       price: '$45.00/per shoe',
+      cost: 45,
+      code: 'rps'
    },
    {
       name: 'Full Color Swap Custom',
       description: `Changing the entire color way of the shoe to match the clients request. No designs, just color changes (Up to 4 colors max)`,
       price: '$160.00',
+      cost: 160,
+      code: 'fcs'
    },
    {
       name: 'Full Restoration',
       description: `Restoring an older or beat up pair of shoes to its almost original look. Includes deep cleaning, sole icing, repaint section, and inside cleaning`,
-      price: 'price varies according to client needs',
+      price: 'price varies according to client needs, base rate starts at $150',
+      cost: 150,
+      code: 'rf'
    },
    {
       name: 'Custom Shoe Design',
       description: `Customizing a clients shoe based on their request/needs. Could have any character, quotes, items painted on it, as well as any color selections`,
-      price: 'starting rate at $110.00 - price varies according to client needs',
+      price: 'starting rate at $120.00 - price varies according to client needs',
+      cost: 120,
+      code: 'csd'
    },
 ];
 
 // add listeners function that is called by app.init
 app.addListeners = () => {
+   let counter = 0; 
+
    app.services.forEach((service) => {
       const newListItem = document.createElement('li');
       newListItem.classList.add('services');
+      newListItem.classList.add(`services${counter}`);
+      newListItem.setAttribute('id', `cart${counter}`)
       // newListItem.setAttribute('data-aos', 'fade-up');
       newListItem.innerHTML = `
-   <div class="serviceName">
-      <h2 class="customName">${service.name}</h2>
-   </div>
-   <div class="serviceDescrip">
-      <p>${service.description}</p>
-      <p> <b>Price</b>: ${service.price}</p>
-   </div>
-   <div class="serviceButtons">
-      <button class="addCart contactButton">Add to cart</button>
-      <button class="contactButton">
-      <a href="./contact.html">Contact Us</a>
-      </button>
-   </div>
-   `
-   app.service.appendChild(newListItem);
-   console.log(newListItem);
+         <div class="serviceName">
+            <h2 class="customName">${service.name}</h2>
+         </div>
+         <div class="serviceDescrip">
+            <p>${service.description}</p>
+            <p> <b>Price</b>: ${service.price}</p>
+         </div>
+         <div class="serviceButtons">
+            <button class="addCart contactButton${counter}">Add to cart</button>
+            <button class="contactUs">
+            <a href="./contact.html">Contact Us</a>
+            </button>
+         </div>
+         `
+      app.service.appendChild(newListItem);
+      // console.log(newListItem);
 
-   app.contactButton = document.querySelector('.contactButton');
-   
-   app.contactButton.addEventListener('click', ()=>{
-      console.log('hey you clicked it!');
-   })
+
+      app.btn = document.getElementById(`cart${counter}`);
+
+      app.btn.addEventListener('click', () => {
+         app.modal.style.display = 'block';
+      });
+
+      window.addEventListener('click', (e) => {
+         // console.log(e.target)
+         const hasClass = e.target.classList.contains(`customPic1`);
+         if (e.target == app.modal) {
+            app.modal.style.display = 'none';
+         }
+      });
+      
+      counter++;
    });
+   
+   app.contactButtonOne = document.querySelector('.contactButton0');
+   app.contactButtonTwo = document.querySelector('.contactButton1');
+   app.contactButtonThree = document.querySelector('.contactButton2');
+   app.contactButtonFour = document.querySelector('.contactButton3');
+   app.contactButtonFive = document.querySelector('.contactButton4');
+   app.contactButtonSix = document.querySelector('.contactButton5');
+   app.contactButtonSeven = document.querySelector('.contactButton6');
+   app.contactButtonEight = document.querySelector('.contactButton7');
+
+   app.contactButtonOne.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[0]);
+   })
+
+   app.contactButtonTwo.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[1]);
+   })
+
+   app.contactButtonThree.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[2]);
+   })
+
+   app.contactButtonFour.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[3]);
+   })
+
+   app.contactButtonFive.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[4]);
+   })
+
+   app.contactButtonSix.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[5]);
+   })
+
+   app.contactButtonSeven.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[6]);
+   })
+
+   app.contactButtonEight.addEventListener('click', ()=>{
+      console.log('hey you clicked it!');
+      app.showDetails(app.services[7]);
+   })
+
    app.addCart = document.querySelector('.addCart');
    
    app.addCart.addEventListener('click', (e)=>{
       e.preventDefault();
       console.log('add to cart!');
    })
+
+   
+   
+   let cartCounter = 1;
+   app.serviceCheck = [];
+   app.showDetails = (data) => {
+      app.newData = document.createElement('li');
+      app.serviceCheck.forEach((item)=>{
+         console.log(item);
+         if (data.code === item) {
+            console.log(`yes, ${data.code} matches with item inside serviceCheck`)
+            
+         } else {
+            console.log('no match!')
+            console.log(app.serviceCheck)
+         }
+         // if data.code === item break.
+         // else push code into data. 
+      })
+      app.newData.innerHTML = `
+         <div class="product">
+         <h1>${cartCounter}: ${data.name}</h1>
+         <p>Price:$${data.cost}.00</p>
+         </div>
+         `;
+      app.serviceCheck.push(data.code)
+      app.serviceModal.appendChild(app.newData);
+      cartCounter++;
+   }   
+   
+   app.span.addEventListener('click', () => {
+      // hiding the modal from the user
+      app.modal.style.display = 'none';
+   });
 };
+
+
+
 
 
 app.init = () => {
@@ -101,3 +222,4 @@ app.init = () => {
 
 
 app.init();
+
