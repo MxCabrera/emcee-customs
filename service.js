@@ -17,32 +17,32 @@ app.services = [
    {
       name: 'Basic Cleaning',
       description: `Base cleaning session`,
-      price: '$40',
+      price: '$40.00',
    },
    {
       name: 'Deep Cleaning',
       description: `Deeper cleaning session, helps remove all the dirt and grime in the hard the reach areas as well as the inside & bottom sole`,
-      price: '$55',
+      price: '$55.00',
    },
    {
       name: 'Sole Icing',
       description: `Icing the sole of your shoes. Using a solution, it will turn your yellow'd soles back to its transparent icy blue form`,
-      price: '$20/per session',
+      price: '$20.00/per session',
    },
    {
       name: 'Re-paint touch ups',
       description: `Service provided to areas of the shoe where the paint has scratched off or lost its color during use. Will go through process of initial coat removal, sanding, color-matching, painting, and acrylic finisher `,
-      price: '$25/per shoe',
+      price: '$25.00/per shoe',
    },
    {
       name: 'Re-paint sections',
       description: `Service provided to areas of the shoe where a large section of paint has scratched off or lost its color during use. Will go through process of initial coat removal, sanding, color-matching, painting, and acrylic finisher `,
-      price: '$45/per shoe',
+      price: '$45.00/per shoe',
    },
    {
       name: 'Full Color Swap Custom',
       description: `Changing the entire color way of the shoe to match the clients request. No designs, just color changes (Up to 4 colors max)`,
-      price: '$160',
+      price: '$160.00',
    },
    {
       name: 'Full Restoration',
@@ -52,7 +52,7 @@ app.services = [
    {
       name: 'Custom Shoe Design',
       description: `Customizing a clients shoe based on their request/needs. Could have any character, quotes, items painted on it, as well as any color selections`,
-      price: 'starting rate at $110 - price varies according to client needs',
+      price: 'starting rate at $110.00 - price varies according to client needs',
    },
 ];
 
@@ -64,15 +64,17 @@ app.addListeners = () => {
       // newListItem.setAttribute('data-aos', 'fade-up');
       newListItem.innerHTML = `
    <div class="serviceName">
-   <h2 class="customName">${service.name}</h2>
+      <h2 class="customName">${service.name}</h2>
    </div>
    <div class="serviceDescrip">
-   <p>${service.description}</p>
-   <p> Price: ${service.price}</p>
+      <p>${service.description}</p>
+      <p> <b>Price</b>: ${service.price}</p>
    </div>
    <div class="serviceButtons">
-   <button class="addCart">Add to cart</button>
-   <button class="contactButton"> Contact Us</button>
+      <button class="addCart contactButton">Add to cart</button>
+      <button class="contactButton">
+      <a href="./contact.html">Contact Us</a>
+      </button>
    </div>
    `
    app.service.appendChild(newListItem);
@@ -84,8 +86,13 @@ app.addListeners = () => {
       console.log('hey you clicked it!');
    })
    });
+   app.addCart = document.querySelector('.addCart');
+   
+   app.addCart.addEventListener('click', (e)=>{
+      e.preventDefault();
+      console.log('add to cart!');
+   })
 };
-
 
 
 app.init = () => {

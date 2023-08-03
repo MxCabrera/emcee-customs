@@ -1,69 +1,82 @@
-console.log('it works gallery');
-
 // name spacing app 
 const app = {};
 
 // hamburger drop down menu js logic :
 app.hamburger = document.querySelector('.hamburger');
 app.navLink = document.querySelector('.nav__link');
-app.gallery = document.querySelector('.galleryContainer');
-app.cart = document.querySelector('.eCart')
-app.restored = document.querySelector('.restorationsBox');
-app.isolateShoe = [];
 
+// gallery section variables 
+app.gallery = document.querySelector('.galleryContainer');
+app.restored = document.querySelector('.restorationsBox');
+app.cleaned = document.querySelector('.cleanBox');
+app.cart = document.querySelector('.eCart');
+// app.isolateShoe = [];
+// app.customPhotos = [];
+
+// connecting modal html element to a variable
+app.modal = document.getElementById('myModal');
+app.span = document.querySelector('.close');
+app.shoeModal = document.querySelector('.shoeData');
 
 // on click that adds a hide class to element
 app.hamburger.addEventListener('click', () => {
    app.navLink.classList.toggle('hide');
 });
 
-// gallery portfolio array for later use
+// connecting html tabs to a variable for future use
+app.customTab = document.querySelector('.customTab');
+app.restoreTab = document.querySelector('.restoreTab');
+app.cleanTab = document.querySelector('.cleanTab');
+
+// event listeners that wait for user to click specific button, and display the correct data.
+// first title tab click
+app.customTab.addEventListener('click', () => {
+   app.gallery.style.display = 'flex';
+   app.restored.style.display = 'none';
+   app.cleaned.style.display = 'none';
+});
+
+// second title tab click
+app.restoreTab.addEventListener('click', () => {
+   app.gallery.style.display = 'none';
+   app.restored.style.display = 'block';
+   app.cleaned.style.display = 'none';
+});
+
+// third title tab click
+app.cleanTab.addEventListener('click', () => {
+   app.gallery.style.display = 'none';
+   app.restored.style.display = 'none';
+   app.cleaned.style.display = 'block';
+});
+
+// starting the app with customs tab showing first. with the other 2 display:none until user decides to click otherwise
+app.restored.style.display = 'none';
+app.cleaned.style.display = 'none';
+
+// customs portfolio array for later use
 app.gallerys = [
    {
-      name: 'Inuyasha x Inuyasha Demon AF1 Low',
+      name: 'Inuyasha x Demon Form AF1 Low',
       mainImage: './assets/custom/AF1Inuyasha/IMG_3046-min.JPG',
       images: [
          './assets/custom/AF1Inuyasha/IMG_3030-min.JPG',
          './assets/custom/AF1Inuyasha/IMG_3031-min.JPG',
          './assets/custom/AF1Inuyasha/IMG_3032-min.JPG',
          './assets/custom/AF1Inuyasha/IMG_3033-min.JPG',
-         './assets/custom/AF1Inuyasha/IMG_3034-min.JPG',
-         './assets/custom/AF1Inuyasha/IMG_3037-min.JPG',
-         './assets/custom/AF1Inuyasha/IMG_3042-min.JPG',
-         './assets/custom/AF1Inuyasha/IMG_3045-min.JPG',
-         './assets/custom/AF1Inuyasha/IMG_3046-min.JPG',
       ],
-      description: `A custom hand painted drawing of Inuysha, and the demon form of the main character of his own anime show, "Inuyasha"`
+      description: `A dual version of Inuyasha, the half-demon protagonist in the 2000 anime, Inuyasha, in both normal and demon mode. A jewel shard are painted in the back of the shoe. `
    },
    {
       name: 'Sasuke x Itachi Uchiha AF1 High',
       mainImage:'./assets/custom/AF1UchichaBros/IMG_3147.JPG',
       images: [
-         './assets/custom/AF1UchichaBros/IMG_3106.JPG',
+         './assets/custom/AF1UchichaBros/IMG_3133.JPG',
+         './assets/custom/AF1UchichaBros/IMG_3138.JPG',
          './assets/custom/AF1UchichaBros/IMG_3107.JPG',
          './assets/custom/AF1UchichaBros/IMG_3110.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3111.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3112.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3117.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3118.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3123.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3124.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3127.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3133.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3135.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3138.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3139.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3140.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3141.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3142.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3143.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3144.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3147.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3149.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3150.JPG',
-         './assets/custom/AF1UchichaBros/IMG_3151.JPG',
       ],
-      description: `A custom hand painted drawing of Sasuke Uchiha and his older Brother Itachi, along with it's family inspired "Sharingan", from the classic anime show "Naruto"`
+      description: `Sasuke and Itachi Uchiha, of the Akatsuki Clan. Using the Akatsuki cloud they wore on their jacket, it inspired the design around the shoe. Characters are based on the classic anime, "Naruto"`
 
    },
    {
@@ -73,111 +86,63 @@ app.gallerys = [
          './assets/custom/AF1Zenitsu/IMG_2489.JPG',
          './assets/custom/AF1Zenitsu/IMG_2493.JPG',
          './assets/custom/AF1Zenitsu/IMG_2494.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2496.JPG',
          './assets/custom/AF1Zenitsu/IMG_2497.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2500.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2502.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2519.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2521.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2523.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2527.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2529.JPG',
-         './assets/custom/AF1Zenitsu/IMG_2531.JPG',
       ],
-      description: `A custom hand painted drawing of Zenitsu, the Thunder breathing slayer in both attack mode and frightened scene from the spider demons, shown in the latest anime, "Demonslayer"`
+      description: `Zenitsu, the thunder-breathing demon slayer that has a knack for passing out when people need him the most. His fear-stricken sleep causes him to become the most deadliest unconscious slayer. he is shown in attack mode and frightened scene from the spider demons, from in the latest anime, "Demonslayer"`
    },
    {
       name: 'Itadori Yuuji x Gojo Satoru Nike Cortez',
       mainImage: './assets/custom/NikeJujutsu/IMG_2840.JPG',
       images: [
-         './assets/custom/NikeJujutsu/IMG_2837.JPG',
-         './assets/custom/NikeJujutsu/IMG_2839.JPG',
-         './assets/custom/NikeJujutsu/IMG_2840.JPG',
+         './assets/custom/NikeJujutsu/IMG_2850.JPG',
+         './assets/custom/NikeJujutsu/IMG_2888.JPG',
          './assets/custom/NikeJujutsu/IMG_2842.JPG',
          './assets/custom/NikeJujutsu/IMG_2843.JPG',
-         './assets/custom/NikeJujutsu/IMG_2849.JPG',
-         './assets/custom/NikeJujutsu/IMG_2850.JPG',
-         './assets/custom/NikeJujutsu/IMG_2853.JPG',
-         './assets/custom/NikeJujutsu/IMG_2879.JPG',
-         './assets/custom/NikeJujutsu/IMG_2881.JPG',
-         './assets/custom/NikeJujutsu/IMG_2883.JPG',
-         './assets/custom/NikeJujutsu/IMG_2884.JPG',
-         './assets/custom/NikeJujutsu/IMG_2888.JPG',
+
       ],
-      description: `A custom hand painted drawing of Itadori Yuuji and Sensei Gojo Satoru created using the art design from the end credits of the upcoming anime, "Jujutsu Kaisen"`
+      description: `Itadori Yuuji, along side his Sensei and Mentor, Gojo Satoru; these sorcerers are copied from the art design in the end credits of the recent anime, "Jujutsu Kaisen"`
    },
    {
       name: 'Blue Cherry Blossoms AF1 Low',
       mainImage: './assets/custom/AF1CherryBlossoms/IMG_2176-min.JPG',
       images: [
-         './assets/custom/AF1CherryBlossoms/IMG_2174-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2176-min.JPG',
+         './assets/custom/AF1CherryBlossoms/IMG_2204-min.JPG',
+         './assets/custom/AF1CherryBlossoms/IMG_2197-min.JPG',
          './assets/custom/AF1CherryBlossoms/IMG_2184-min.JPG',
          './assets/custom/AF1CherryBlossoms/IMG_2186-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2189-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2191-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2193-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2194-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2197-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2202-min.JPG',
-         './assets/custom/AF1CherryBlossoms/IMG_2204-min.JPG',
       ],
-      description: `A custom hand painted drawing of a Blue Cherry Blossom Tree concept design`
+      description: `Blue Cherry Blossoms still attached to the long branches that reach out, almost engulfing the whole side of the shoes. Nike swoosh is painted black.`
    },
    {
       name: 'PokeMon x Vaporeon x Lapras AF1 Low',
       mainImage: './assets/custom/AF1WaterPokemon/IMG_2645.JPG',
       images: [
          './assets/custom/AF1WaterPokemon/IMG_2637.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2640.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2641.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2642.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2643.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2644.JPG',
          './assets/custom/AF1WaterPokemon/IMG_2645.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2647.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2648.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2649.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2662.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2664.JPG',
-         './assets/custom/AF1WaterPokemon/IMG_2667.JPG',
+         './assets/custom/AF1WaterPokemon/IMG_2640.JPG',
+         './assets/custom/AF1WaterPokemon/IMG_2642.JPG',
       ],
-      description: `A custom hand painted drawing of Lapras and Vaporeon created using the art design from "Pokemon"`
+      description: `The water pokemon; Lapras and Vaporeon. Both chosen by the client whom favored these ones out of the rest. Inspired from the old classic western anime, "Pokemon"`
    },
    {
       name: 'Mint Paisley Print AF1 Low',
       mainImage: './assets/custom/AF1Paisley/IMG_3792.JPG',
       images: [
          './assets/custom/AF1Paisley/IMG_3791.JPG',
-         './assets/custom/AF1Paisley/IMG_3792.JPG',
+         './assets/custom/AF1Paisley/IMG_3797.JPG',
          './assets/custom/AF1Paisley/IMG_3793.JPG',
          './assets/custom/AF1Paisley/IMG_3794.JPG',
-         './assets/custom/AF1Paisley/IMG_3795.JPG',
-         './assets/custom/AF1Paisley/IMG_3796.JPG',
-         './assets/custom/AF1Paisley/IMG_3797.JPG',
-         './assets/custom/AF1Paisley/IMG_3798.JPG',
-         './assets/custom/AF1Paisley/IMG_3799.JPG',
-         './assets/custom/AF1Paisley/IMG_3800.JPG',
-         './assets/custom/AF1Paisley/IMG_3801.JPG',
       ],
-      description: `A custom hand painted mint paisley print details on the swoosh and back tab`
+      description: `A custom hand painted clean light mint paisley design and details on the swoosh and back tab. `
    },
    {
       name: 'Red Riot x Kendo Rappa x My Hero Adidas',
-      mainImage: './assets/custom/AdidasMyHero/IMG_2218-min.JPG',
+      mainImage: './assets/custom/AdidasMyHero/IMG_2225-min.JPG',
       images: [
          './assets/custom/AdidasMyHero/IMG_2120-min.JPG',
          './assets/custom/AdidasMyHero/IMG_2122-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2124-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2127-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2128-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2129-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2214-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2218-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2223-min.JPG',
          './assets/custom/AdidasMyHero/IMG_2225-min.JPG',
          './assets/custom/AdidasMyHero/IMG_2228-min.JPG',
-         './assets/custom/AdidasMyHero/IMG_2234-min.JPG',
       ],
       description: `A custom hand painted drawing of Red Riot and Kendo Rappa fight scene created using the art design from the anime, "My Hero Academia"`
    },
@@ -185,20 +150,10 @@ app.gallerys = [
       name: 'Takashi POM x OVO Collab AF1 Low',
       mainImage: './assets/custom/AF1TakashiPom/IMG_2301.JPG',
       images: [
-         './assets/custom/AF1TakashiPom/IMG_2147.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2148.JPG',
          './assets/custom/AF1TakashiPom/IMG_2149.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2152.JPG',
          './assets/custom/AF1TakashiPom/IMG_2153.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2156.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2158.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2159.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2164.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2166.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2296.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2298.JPG',
+         './assets/custom/AF1TakashiPom/IMG_2152.JPG',
          './assets/custom/AF1TakashiPom/IMG_2299.JPG',
-         './assets/custom/AF1TakashiPom/IMG_2301.JPG',
       ],
       description: `A custom hand painted drawing of the fashion collaboration design between Japanese Artist Takashi POM & Drake's October's Very Own Brand`
    },
@@ -206,27 +161,10 @@ app.gallerys = [
       name: 'Bart Simpson x CamRon x Donut Off the Wall Vans',
       mainImage: './assets/custom/VansBartSimpson/IMG_2286.JPG',
       images: [
-         './assets/custom/VansBartSimpson/IMG_2252.JPG',
-         './assets/custom/VansBartSimpson/IMG_2259.JPG',
-         './assets/custom/VansBartSimpson/IMG_2263.JPG',
-         './assets/custom/VansBartSimpson/IMG_2264.JPG',
-         './assets/custom/VansBartSimpson/IMG_2265.JPG',
-         './assets/custom/VansBartSimpson/IMG_2266.JPG',
-         './assets/custom/VansBartSimpson/IMG_2267.JPG',
-         './assets/custom/VansBartSimpson/IMG_2268.JPG',
-         './assets/custom/VansBartSimpson/IMG_2269.JPG',
-         './assets/custom/VansBartSimpson/IMG_2270.JPG',
-         './assets/custom/VansBartSimpson/IMG_2271.JPG',
-         './assets/custom/VansBartSimpson/IMG_2272.JPG',
-         './assets/custom/VansBartSimpson/IMG_2277.JPG',
-         './assets/custom/VansBartSimpson/IMG_2278.JPG',
-         './assets/custom/VansBartSimpson/IMG_2286.JPG',
-         './assets/custom/VansBartSimpson/IMG_2287.JPG',
-         './assets/custom/VansBartSimpson/IMG_2288.JPG',
-         './assets/custom/VansBartSimpson/IMG_2289.JPG',
-         './assets/custom/VansBartSimpson/IMG_2290.JPG',
-         './assets/custom/VansBartSimpson/IMG_2294.JPG',
          './assets/custom/VansBartSimpson/IMG_2295.JPG',
+         './assets/custom/VansBartSimpson/IMG_2277.JPG',
+         './assets/custom/VansBartSimpson/IMG_2270.JPG',
+         './assets/custom/VansBartSimpson/IMG_2264.JPG',
       ],
       description: `A custom hand painted drawing of Bart Simpson x Cam'Ron collaboration with the Iconic Donut from the classic show, "The Simpsons"`
    },
@@ -234,23 +172,10 @@ app.gallerys = [
       name: 'Abomidable Snowman x Winter Sports Nike Blazers',
       mainImage: './assets/custom/NikeSnowman/IMG_2872.JPG',
       images: [
-         './assets/custom/NikeSnowman/IMG_2800.JPG',
+         './assets/custom/NikeSnowman/IMG_2875.JPG',
          './assets/custom/NikeSnowman/IMG_2856.JPG',
          './assets/custom/NikeSnowman/IMG_2857.JPG',
-         './assets/custom/NikeSnowman/IMG_2859.JPG',
-         './assets/custom/NikeSnowman/IMG_2860.JPG',
-         './assets/custom/NikeSnowman/IMG_2861.JPG',
-         './assets/custom/NikeSnowman/IMG_2862.JPG',
          './assets/custom/NikeSnowman/IMG_2863.JPG',
-         './assets/custom/NikeSnowman/IMG_2868.JPG',
-         './assets/custom/NikeSnowman/IMG_2869.JPG',
-         './assets/custom/NikeSnowman/IMG_2870.JPG',
-         './assets/custom/NikeSnowman/IMG_2871.JPG',
-         './assets/custom/NikeSnowman/IMG_2872.JPG',
-         './assets/custom/NikeSnowman/IMG_2873.JPG',
-         './assets/custom/NikeSnowman/IMG_2874.JPG',
-         './assets/custom/NikeSnowman/IMG_2875.JPG',
-         './assets/custom/NikeSnowman/IMG_2876.JPG',
       ],
       description: `A custom hand painted drawing of Snowman x Icy Winter skating concept `
    },
@@ -258,14 +183,10 @@ app.gallerys = [
       name: 'Floral Rose Concept Design on High Top Boots',
       mainImage: './assets/custom/RoseBoots/IMG_2555.JPG',
       images: [
-         './assets/custom/RoseBoots/IMG_2537.JPG',
-         './assets/custom/RoseBoots/IMG_2542.JPG',
-         './assets/custom/RoseBoots/IMG_2549.JPG',
-         './assets/custom/RoseBoots/IMG_2550.JPG',
          './assets/custom/RoseBoots/IMG_2553.JPG',
-         './assets/custom/RoseBoots/IMG_2555.JPG',
-         './assets/custom/RoseBoots/IMG_2569.JPG',
          './assets/custom/RoseBoots/IMG_2573.JPG',
+         './assets/custom/RoseBoots/IMG_2549.JPG',
+         './assets/custom/RoseBoots/IMG_2569.JPG',
       ],
       description: `A custom hand painted drawing of Floral Rose design on the top of the Boots`
    },
@@ -274,22 +195,10 @@ app.gallerys = [
       mainImage: './assets/custom/NikeBikeShoe/IMG_3625.JPG',
       images: [
          './assets/custom/NikeBikeShoe/IMG_3614.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3615.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3616.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3617.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3618.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3619.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3621.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3622.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3624.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3625.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3626.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3627.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3628.JPG',
-         './assets/custom/NikeBikeShoe/IMG_3629.JPG',
          './assets/custom/NikeBikeShoe/IMG_3632.JPG',
          './assets/custom/NikeBikeShoe/IMG_3635.JPG',
          './assets/custom/NikeBikeShoe/IMG_3639.JPG',
+         './assets/custom/NikeBikeShoe/IMG_3625.JPG',
       ],
       description: `A custom hand painted drawing of a Jordan 1 conceptual design on a base bicycle shoe`
    },
@@ -298,16 +207,9 @@ app.gallerys = [
       mainImage: './assets/custom/AF1Demonslayer/IMG_2404-min.JPG',
       images: [
          './assets/custom/AF1Demonslayer/IMG_2404-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2406-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2408-min.JPG',
          './assets/custom/AF1Demonslayer/IMG_2412-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2413-min.JPG',
          './assets/custom/AF1Demonslayer/IMG_2414-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2415-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2416-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2418-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2421-min.JPG',
-         './assets/custom/AF1Demonslayer/IMG_2423-min.JPG',
+         './assets/custom/AF1Demonslayer/IMG_2413-min.JPG',
       ],
       description: `A custom hand painted drawing of Tanjiro and Nezuko created using the art design from the end credits of the upcoming anime, "Demonslayer"`
    },
@@ -315,33 +217,21 @@ app.gallerys = [
       name: 'Butterfly x Flower AF1 Low',
       mainImage: './assets/custom/AF1Butterfly/IMG_3909-min.JPG',
       images: [
-         './assets/custom/AF1Butterfly/IMG_3904-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3905-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3906-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3907-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3908-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3909-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3910-min.JPG',
          './assets/custom/AF1Butterfly/IMG_3911-min.JPG',
          './assets/custom/AF1Butterfly/IMG_3912-min.JPG',
-         './assets/custom/AF1Butterfly/IMG_3913-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3905-min.JPG',
+         './assets/custom/AF1Butterfly/IMG_3909-min.JPG',
       ],
       description: `A custom hand painted drawing of a butterfly and flower concept design`
    },
    {
       name: 'Killua x HunterxHunter AF1 Low',
-      mainImage: './assets/custom/AF1KilluaxHunter/IMG_3922-min.JPG',
+      mainImage: './assets/custom/AF1KilluaxHunter/IMG_3915-min.JPG',
       images: [
          './assets/custom/AF1KilluaxHunter/IMG_3914-min.JPG',
          './assets/custom/AF1KilluaxHunter/IMG_3915-min.JPG',
          './assets/custom/AF1KilluaxHunter/IMG_3916-min.JPG',
-         './assets/custom/AF1KilluaxHunter/IMG_3917-min.JPG',
          './assets/custom/AF1KilluaxHunter/IMG_3918-min.JPG',
-         './assets/custom/AF1KilluaxHunter/IMG_3919-min.JPG',
-         './assets/custom/AF1KilluaxHunter/IMG_3920-min.JPG',
-         './assets/custom/AF1KilluaxHunter/IMG_3921-min.JPG',
-         './assets/custom/AF1KilluaxHunter/IMG_3922-min.JPG',
-         './assets/custom/AF1KilluaxHunter/IMG_3923-min.JPG',
       ],
       description: `A custom hand painted drawing of Killua Zoldyck created using the art design from the anime, "Hunter x Hunter"`
    },
@@ -356,21 +246,12 @@ app.gallerys = [
    },
    {
       name: 'OVO x Raptors x Philippines Design AF1 Low',
-      mainImage: './assets/custom/AF1TorontoFilipino/IMG_2450.JPG',
+      mainImage: './assets/custom/AF1TorontoFilipino/IMG_2438.JPG',
       images: [
          './assets/custom/AF1TorontoFilipino/IMG_2438.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2439.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2440.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2445.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2447.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2450.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2451.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2453.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2454.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2464.JPG',
          './assets/custom/AF1TorontoFilipino/IMG_2468.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2470.JPG',
-         './assets/custom/AF1TorontoFilipino/IMG_2472.JPG',
+         './assets/custom/AF1TorontoFilipino/IMG_2454.JPG',
+         './assets/custom/AF1TorontoFilipino/IMG_2453.JPG',
       ],
       description: `A custom hand painted drawing of a design collaboration that includes the OVO x Raptors logo, as well as a Philippines-inspired conceptual `
    },
@@ -379,18 +260,9 @@ app.gallerys = [
       mainImage: './assets/custom/AF1OnePiece/IMG_3890-min.JPG',
       images: [
          './assets/custom/AF1OnePiece/IMG_3890-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3891-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3892-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3893-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3894-min.JPG',
          './assets/custom/AF1OnePiece/IMG_3895-min.JPG',
          './assets/custom/AF1OnePiece/IMG_3896-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3897-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3898-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3899-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3900-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3901-min.JPG',
-         './assets/custom/AF1OnePiece/IMG_3902-min.JPG',
+         './assets/custom/AF1OnePiece/IMG_3897-min.JPG'
       ],
       description: `A custom hand painted drawing of Monkey D. Luffy and Zoro created using the art design from the end credits of the timeless anime, "One Piece"`
    },
@@ -402,7 +274,6 @@ app.gallerys = [
          './assets/custom/AF1KamisamaKiss/IMG_7134-min.jpg',
          './assets/custom/AF1KamisamaKiss/IMG_7135-min.jpg',
          './assets/custom/AF1KamisamaKiss/IMG_7136-min.jpg',
-         './assets/custom/AF1KamisamaKiss/IMG_7137-min.jpg',
       ],
       description: `A custom hand painted drawing of Tomoe created from the upcoming anime, "Kamisama Kiss"`
    },
@@ -412,20 +283,8 @@ app.gallerys = [
       images: [
          './assets/custom/AF1UncBlue/IMG_3775.JPG',
          './assets/custom/AF1UncBlue/IMG_3776.JPG',
-         './assets/custom/AF1UncBlue/IMG_3777.JPG',
-         './assets/custom/AF1UncBlue/IMG_3778.JPG',
-         './assets/custom/AF1UncBlue/IMG_3779.JPG',
          './assets/custom/AF1UncBlue/IMG_3780.JPG',
-         './assets/custom/AF1UncBlue/IMG_3781.JPG',
          './assets/custom/AF1UncBlue/IMG_3782.JPG',
-         './assets/custom/AF1UncBlue/IMG_3783.JPG',
-         './assets/custom/AF1UncBlue/IMG_3784.JPG',
-         './assets/custom/AF1UncBlue/IMG_3785.JPG',
-         './assets/custom/AF1UncBlue/IMG_3786.JPG',
-         './assets/custom/AF1UncBlue/IMG_3787.JPG',
-         './assets/custom/AF1UncBlue/IMG_3788.JPG',
-         './assets/custom/AF1UncBlue/IMG_3789.JPG',
-         './assets/custom/AF1UncBlue/IMG_3790.JPG',
       ],
       description: `A custom hand painted drawing of a UNC inspired colorway conceptual design`
    },
@@ -433,14 +292,10 @@ app.gallerys = [
       name: 'San x Moro x Princess Mononoke Nike Slides',
       mainImage: './assets/custom/NikeMononoke/IMG_3464.JPG',
       images: [
-         './assets/custom/NikeMononoke/IMG_3461.JPG',
-         './assets/custom/NikeMononoke/IMG_3462.JPG',
-         './assets/custom/NikeMononoke/IMG_3463.JPG',
-         './assets/custom/NikeMononoke/IMG_3464.JPG',
-         './assets/custom/NikeMononoke/IMG_3465.JPG',
-         './assets/custom/NikeMononoke/IMG_3466.JPG',
          './assets/custom/NikeMononoke/IMG_3467.JPG',
          './assets/custom/NikeMononoke/IMG_3468.JPG',
+         './assets/custom/NikeMononoke/IMG_3463.JPG',
+         './assets/custom/NikeMononoke/IMG_3464.JPG',
       ],
       description: `A custom hand painted drawing of San and her trusty Wolf, Moro. Created using the art design from the Studio Ghibli anime, "Princess Mononoke"`
    },
@@ -452,30 +307,28 @@ app.gallerys = [
          './assets/custom/PhilippinesFlag/IMG_3470.JPG',
          './assets/custom/PhilippinesFlag/IMG_3471.JPG',
          './assets/custom/PhilippinesFlag/IMG_3472.JPG',
-         './assets/custom/PhilippinesFlag/IMG_3474.JPG',
-         './assets/custom/PhilippinesFlag/IMG_3475.JPG',
-         './assets/custom/PhilippinesFlag/IMG_3476.JPG',
       ],
       description: `A custom hand painted drawing of the Philippines' national flower, the Sampaguita.`
    },
    {
       name: 'Mickey Mouse Customs',
-      mainImage: './assets/custom/MickeyMouse/IMG_3460.JPG',
+      mainImage: './assets/custom/MickeyMouse/IMG_3456.JPG',
       images: [
          './assets/custom/MickeyMouse/IMG_3456.JPG',
          './assets/custom/MickeyMouse/IMG_3457.JPG',
          './assets/custom/MickeyMouse/IMG_3458.JPG',
          './assets/custom/MickeyMouse/IMG_3459.JPG',
-         './assets/custom/MickeyMouse/IMG_3460.JPG',
+
       ],
       description: `A custom hand painted drawing of Mickey Mouse Iconic Logo`
    }
 ];
-
+// restoration portfolio array for later use
 app.restore = [
    {
       name: `Air Jordan 'True Blue' 3  `,
-      mainImage: './assets/restore/TrueBlue3/IMG_3371.JPG',
+      beforeImage: './assets/restore/TrueBlue3/IMG_3378.JPG',
+      afterImage: './assets/restore/TrueBlue3/IMG_3427.JPG',
       images: [
          './assets/restore/TrueBlue3/IMG_3371.JPG',
          './assets/restore/TrueBlue3/IMG_3372.JPG',
@@ -497,12 +350,30 @@ app.restore = [
          './assets/restore/TrueBlue3/IMG_3416.JPG',
          './assets/restore/TrueBlue3/IMG_3417.JPG',
          './assets/restore/TrueBlue3/IMG_3418.JPG',
+         './assets/restore/TrueBlue3/IMG_3418.JPG',
+         './assets/restore/TrueBlue3/IMG_3419.JPG',
+         './assets/restore/TrueBlue3/IMG_3420.JPG',
+         './assets/restore/TrueBlue3/IMG_3421.JPG',
+         './assets/restore/TrueBlue3/IMG_3422.JPG',
+         './assets/restore/TrueBlue3/IMG_3423.JPG',
+         './assets/restore/TrueBlue3/IMG_3424.JPG',
+         './assets/restore/TrueBlue3/IMG_3425.JPG',
+         './assets/restore/TrueBlue3/IMG_3426.JPG',
+         './assets/restore/TrueBlue3/IMG_3427.JPG',
+         './assets/restore/TrueBlue3/IMG_3428.JPG',
+         './assets/restore/TrueBlue3/IMG_3429.JPG',
+         './assets/restore/TrueBlue3/IMG_3430.JPG',
+         './assets/restore/TrueBlue3/IMG_3431.JPG',
+         './assets/restore/TrueBlue3/IMG_3432.JPG',
+         './assets/restore/TrueBlue3/IMG_3433.JPG',
+         './assets/restore/TrueBlue3/IMG_3434.JPG',
       ],
       description: `A complete restoration including, deep clean service, sectional re-paint, sanding, finishing/sealant, as well as a back tab swap`
    },
    {
       name: `Air Jordan 'Legend Blue' 4  `,
-      mainImage: './assets/restore/LegendBlue4/IMG_2897.JPG',
+      beforeImage: './assets/restore/LegendBlue4/IMG_2897.JPG',
+      afterImage: './assets/restore/LegendBlue4/IMG_3005.JPG',
       images: [
          './assets/restore/LegendBlue4/IMG_2897.JPG',
          './assets/restore/LegendBlue4/IMG_2898.JPG',
@@ -545,7 +416,8 @@ app.restore = [
    },
    {
       name: `Air Jordan 'Sport Blue' 3  `,
-      mainImage: './assets/restore/SportsBlue3/IMG_2476.JPG',
+      beforeImage: './assets/restore/SportsBlue3/IMG_2479.JPG',
+      afterImage: './assets/restore/SportsBlue3/IMG_2481.JPG',
       images: [
          './assets/restore/SportsBlue3/IMG_2476.JPG',
          './assets/restore/SportsBlue3/IMG_2477.JPG',
@@ -562,196 +434,348 @@ app.restore = [
          './assets/restore/SportsBlue3/IMG_2488.JPG',
       ],
       description: `A complete restoration including, deep clean service, sectional re-paint, sanding, finishing/sealant.`
-   },
+   }
+];
+// cleaning portfolio array for later use
+app.cleaning = [
    {
       name: `Air Jordan 'Flint' 13  `,
-      mainImage: './assets/restore/Flint13/IMG_3657.JPG',
+      beforeImage: './assets/cleaning/Flint13/IMG_3657.JPG',
+      afterImage: './assets/cleaning/Flint13/IMG_3672.JPG',
       images: [
-         './assets/restore/Flint13/IMG_3657.JPG',
-         './assets/restore/Flint13/IMG_3658.JPG',
-         './assets/restore/Flint13/IMG_3659.JPG',
-         './assets/restore/Flint13/IMG_3660.JPG',
-         './assets/restore/Flint13/IMG_3661.JPG',
-         './assets/restore/Flint13/IMG_3662.JPG',
-         './assets/restore/Flint13/IMG_3663.JPG',
-         './assets/restore/Flint13/IMG_3664.JPG',
-         './assets/restore/Flint13/IMG_3665.JPG',
-         './assets/restore/Flint13/IMG_3666.JPG',
-         './assets/restore/Flint13/IMG_3667.JPG',
-         './assets/restore/Flint13/IMG_3668.JPG',
-         './assets/restore/Flint13/IMG_3669.JPG',
-         './assets/restore/Flint13/IMG_3670.JPG',
-         './assets/restore/Flint13/IMG_3672.JPG',
-         './assets/restore/Flint13/IMG_3673.JPG',
-         './assets/restore/Flint13/IMG_3674.JPG',
-         './assets/restore/Flint13/IMG_3675.JPG',
-         './assets/restore/Flint13/IMG_3676.JPG',
+         './assets/cleaning/Flint13/IMG_3657.JPG',
+         './assets/cleaning/Flint13/IMG_3658.JPG',
+         './assets/cleaning/Flint13/IMG_3659.JPG',
+         './assets/cleaning/Flint13/IMG_3660.JPG',
+         './assets/cleaning/Flint13/IMG_3661.JPG',
+         './assets/cleaning/Flint13/IMG_3662.JPG',
+         './assets/cleaning/Flint13/IMG_3663.JPG',
+         './assets/cleaning/Flint13/IMG_3664.JPG',
+         './assets/cleaning/Flint13/IMG_3665.JPG',
+         './assets/cleaning/Flint13/IMG_3666.JPG',
+         './assets/cleaning/Flint13/IMG_3667.JPG',
+         './assets/cleaning/Flint13/IMG_3668.JPG',
+         './assets/cleaning/Flint13/IMG_3669.JPG',
+         './assets/cleaning/Flint13/IMG_3670.JPG',
+         './assets/cleaning/Flint13/IMG_3672.JPG',
+         './assets/cleaning/Flint13/IMG_3673.JPG',
+         './assets/cleaning/Flint13/IMG_3674.JPG',
+         './assets/cleaning/Flint13/IMG_3675.JPG',
+         './assets/cleaning/Flint13/IMG_3676.JPG',
       ],
       description: `A complete restoration including, deep clean service, sectional re-paint, sanding, finishing/sealant.`
    },
    {
       name: `Air Jordan 'University of North Carolina' 11  `,
-      mainImage: './assets/restore/Unc11/IMG_2583.JPG',
+      beforeImage: './assets/cleaning/Unc11/IMG_2583.JPG',
+      afterImage: './assets/cleaning/Unc11/IMG_2617.JPG',
       images: [
-         './assets/restore/Unc11/IMG_2583.JPG',
-         './assets/restore/Unc11/IMG_2584.JPG',
-         './assets/restore/Unc11/IMG_2585.JPG',
-         './assets/restore/Unc11/IMG_2586.JPG',
-         './assets/restore/Unc11/IMG_2587.JPG',
-         './assets/restore/Unc11/IMG_2588.JPG',
-         './assets/restore/Unc11/IMG_2589.JPG',
-         './assets/restore/Unc11/IMG_2590.JPG',
-         './assets/restore/Unc11/IMG_2591.JPG',
-         './assets/restore/Unc11/IMG_2592.JPG',
-         './assets/restore/Unc11/IMG_2593.JPG',
-         './assets/restore/Unc11/IMG_2594.JPG',
-         './assets/restore/Unc11/IMG_2595.JPG',
-         './assets/restore/Unc11/IMG_2596.JPG',
-         './assets/restore/Unc11/IMG_2597.JPG',
-         './assets/restore/Unc11/IMG_2598.JPG',
-         './assets/restore/Unc11/IMG_2599.JPG',
-         './assets/restore/Unc11/IMG_2600.JPG',
-         './assets/restore/Unc11/IMG_2601.JPG',
-         './assets/restore/Unc11/IMG_2617.JPG',
-         './assets/restore/Unc11/IMG_2618.JPG',
-         './assets/restore/Unc11/IMG_2619.JPG',
-         './assets/restore/Unc11/IMG_2620.JPG',
-         './assets/restore/Unc11/IMG_2621.JPG',
-         './assets/restore/Unc11/IMG_2622.JPG',
-         './assets/restore/Unc11/IMG_2623.JPG',
-         './assets/restore/Unc11/IMG_2624.JPG',
-         './assets/restore/Unc11/IMG_2625.JPG',
-         './assets/restore/Unc11/IMG_2626.JPG',
-         './assets/restore/Unc11/IMG_2627.JPG',
-         './assets/restore/Unc11/IMG_2628.JPG',
-         './assets/restore/Unc11/IMG_2629.JPG',
-         './assets/restore/Unc11/IMG_2630.JPG',
+         './assets/cleaning/Unc11/IMG_2583.JPG',
+         './assets/cleaning/Unc11/IMG_2584.JPG',
+         './assets/cleaning/Unc11/IMG_2585.JPG',
+         './assets/cleaning/Unc11/IMG_2586.JPG',
+         './assets/cleaning/Unc11/IMG_2587.JPG',
+         './assets/cleaning/Unc11/IMG_2588.JPG',
+         './assets/cleaning/Unc11/IMG_2589.JPG',
+         './assets/cleaning/Unc11/IMG_2590.JPG',
+         './assets/cleaning/Unc11/IMG_2591.JPG',
+         './assets/cleaning/Unc11/IMG_2592.JPG',
+         './assets/cleaning/Unc11/IMG_2593.JPG',
+         './assets/cleaning/Unc11/IMG_2594.JPG',
+         './assets/cleaning/Unc11/IMG_2595.JPG',
+         './assets/cleaning/Unc11/IMG_2596.JPG',
+         './assets/cleaning/Unc11/IMG_2597.JPG',
+         './assets/cleaning/Unc11/IMG_2598.JPG',
+         './assets/cleaning/Unc11/IMG_2599.JPG',
+         './assets/cleaning/Unc11/IMG_2600.JPG',
+         './assets/cleaning/Unc11/IMG_2601.JPG',
+         './assets/cleaning/Unc11/IMG_2617.JPG',
+         './assets/cleaning/Unc11/IMG_2618.JPG',
+         './assets/cleaning/Unc11/IMG_2619.JPG',
+         './assets/cleaning/Unc11/IMG_2620.JPG',
+         './assets/cleaning/Unc11/IMG_2621.JPG',
+         './assets/cleaning/Unc11/IMG_2622.JPG',
+         './assets/cleaning/Unc11/IMG_2623.JPG',
+         './assets/cleaning/Unc11/IMG_2624.JPG',
+         './assets/cleaning/Unc11/IMG_2625.JPG',
+         './assets/cleaning/Unc11/IMG_2626.JPG',
+         './assets/cleaning/Unc11/IMG_2627.JPG',
+         './assets/cleaning/Unc11/IMG_2628.JPG',
+         './assets/cleaning/Unc11/IMG_2629.JPG',
+         './assets/cleaning/Unc11/IMG_2630.JPG',
       ],
       description: `A complete restoration including, deep clean service, sectional re-paint, sanding, finishing/sealant.`
    },
    {
       name: `Yeezys`,
-      mainImage: './assets/restore/Yeezy/IMG_3079.JPG',
+      beforeImage: './assets/cleaning/Yeezy/IMG_3080.JPG',
+      afterImage: './assets/cleaning/Yeezy/IMG_3189.JPG',
       images: [
-         './assets/restore/Yeezy/IMG_3079.JPG',
+         './assets/cleaning/Yeezy/IMG_3079.JPG',
          './assets/restore/Yeezy/IMG_3080.JPG',
-         './assets/restore/Yeezy/IMG_3081.JPG',
-         './assets/restore/Yeezy/IMG_3082.JPG',
-         './assets/restore/Yeezy/IMG_3083.JPG',
-         './assets/restore/Yeezy/IMG_3084.JPG',
-         './assets/restore/Yeezy/IMG_3085.JPG',
-         './assets/restore/Yeezy/IMG_3086.JPG',
-         './assets/restore/Yeezy/IMG_3087.JPG',
-         './assets/restore/Yeezy/IMG_3088.JPG',
-         './assets/restore/Yeezy/IMG_3182.JPG',
-         './assets/restore/Yeezy/IMG_3183.JPG',
-         './assets/restore/Yeezy/IMG_3184.JPG',
-         './assets/restore/Yeezy/IMG_3185.JPG',
-         './assets/restore/Yeezy/IMG_3186.JPG',
-         './assets/restore/Yeezy/IMG_3187.JPG',
-         './assets/restore/Yeezy/IMG_3188.JPG',
-         './assets/restore/Yeezy/IMG_3189.JPG',
-         './assets/restore/Yeezy/IMG_3190.JPG',
-         './assets/restore/Yeezy/IMG_3191.JPG',
-         './assets/restore/Yeezy/IMG_3192.JPG',
-         './assets/restore/Yeezy/IMG_3193.JPG',
-         './assets/restore/Yeezy/IMG_3194.JPG',
-         './assets/restore/Yeezy/IMG_3195.JPG',
-         './assets/restore/Yeezy/IMG_3196.JPG',
-         './assets/restore/Yeezy/IMG_3197.JPG',
-         './assets/restore/Yeezy/IMG_3198.JPG',
+         './assets/cleaning/Yeezy/IMG_3081.JPG',
+         './assets/cleaning/Yeezy/IMG_3082.JPG',
+         './assets/cleaning/Yeezy/IMG_3083.JPG',
+         './assets/cleaning/Yeezy/IMG_3084.JPG',
+         './assets/cleaning/Yeezy/IMG_3085.JPG',
+         './assets/cleaning/Yeezy/IMG_3086.JPG',
+         './assets/cleaning/Yeezy/IMG_3087.JPG',
+         './assets/cleaning/Yeezy/IMG_3088.JPG',
+         './assets/cleaning/Yeezy/IMG_3182.JPG',
+         './assets/cleaning/Yeezy/IMG_3183.JPG',
+         './assets/cleaning/Yeezy/IMG_3184.JPG',
+         './assets/cleaning/Yeezy/IMG_3185.JPG',
+         './assets/cleaning/Yeezy/IMG_3186.JPG',
+         './assets/cleaning/Yeezy/IMG_3187.JPG',
+         './assets/cleaning/Yeezy/IMG_3188.JPG',
+         './assets/cleaning/Yeezy/IMG_3189.JPG',
+         './assets/cleaning/Yeezy/IMG_3190.JPG',
+         './assets/cleaning/Yeezy/IMG_3191.JPG',
+         './assets/cleaning/Yeezy/IMG_3192.JPG',
+         './assets/cleaning/Yeezy/IMG_3193.JPG',
+         './assets/cleaning/Yeezy/IMG_3194.JPG',
+         './assets/cleaning/Yeezy/IMG_3195.JPG',
+         './assets/cleaning/Yeezy/IMG_3196.JPG',
+         './assets/cleaning/Yeezy/IMG_3197.JPG',
+         './assets/cleaning/Yeezy/IMG_3198.JPG',
       ],
       description: `A complete restoration including, deep clean service, sectional re-paint, sanding, finishing/sealant.`
    },
-];
+]
 
-
+// function that appends custom shoes data to DOM
 app.galleryAppend = () => {
+   // counter that will be used in the forEach loop to track the individual arrays.
    let counter = 0;
+   // forEach method to loop through each item in the array
    app.gallerys.forEach((design) => {
-      
+      // html element creation declared in a variable
       const firstListItem = document.createElement('li');
+      // creating a class for each item in the array.
       firstListItem.classList.add(`design${counter}`);
-      firstListItem.setAttribute('id',`theModal${counter}`);
       firstListItem.classList.add(`design`);
-      // console.log(design.mainImage)
+      // setting an ID for each item in the array.
+      firstListItem.setAttribute('id',`theModal${counter}`);
+      // adding html into the li html element
       firstListItem.innerHTML = `
       <div class="designPic">
-      <img class="customPic${counter}" src="${design.mainImage}" alt="${design.name}"
+         <img class="customPic${counter}" src="${design.mainImage}" alt="${design.name}"
       </div>
       `
+      // insert the li element as a child to the html variable. 
       app.gallery.appendChild(firstListItem);
 
-      ///////////////////////////
+      // ~ Modal Feature ~ //
 
-
-      app.modal = document.getElementById('myModal');
-      // console.log(app.modal);
+      // storing a ID in the html element.
       app.btn = document.getElementById(`theModal${counter}`);
 
-      app.shoeModal = document.querySelector('.shoeData');
-      
-   
-      const shoeInfo = document.createElement('li');
-      shoeInfo.classList.add('shoeInformation');
-      shoeInfo.innerHTML = `
-         <div class="infoBox">
-            <h3>${design.name}</h3>
-            <p>${design.description}</p>
-         </div>
-      `
-
-      app.shoeModal.appendChild(shoeInfo);
-
+      // event listener that appends the modal to the DOM when user clicks.
       app.btn.addEventListener('click', () => {
-         // console.log('clicked')
-         app.shoeModal
          app.modal.style.display = 'block';
-      })
-
-      app.span = document.querySelector('.close');
-
-      app.span.addEventListener('click', () => {
-         app.modal.style.display = 'none';
       });
 
+      // if user clicks anywhere in the site, it will remove the modal. 
       window.addEventListener('click', (e) => {
-         // console.log(e.target.classList.contains(`customPic0`))
+         // console.log(e.target)
          const hasClass = e.target.classList.contains(`customPic1`);
          if (e.target == app.modal) {
             app.modal.style.display = 'none';
          }
+      });
 
-         if(hasClass){
-            console.log('yes');
-         } else {
-            console.log('no')
-         }
-      })
-      // maybe push the data into a variable in the global scope to access it later.
-      // in this case, push the picture, with specific class and data that the user clicked on into the variable, which can then be used to manipulate that isolated array of data.
-      // the whole point of this is to be able to create a pop up modal with information and extra photos of the specific shoe that the user clicked on. 
-
-
-      
-      ///////////////////////////
-
-      app.customPic = document.querySelector(`.design${counter}`);
-      app.customPic.addEventListener('click',() => {
-         console.log(`you've clicked on ${firstListItem.className}`)
-      })
+      // adding counter every time it completed a loop. 
       counter++;
    });
 
 
-   // app.addCart = document.querySelector('.addCart');
+   // connecting the array of shoes classNames with a variable
+   app.one = document.querySelector('.design0');
+   app.two = document.querySelector('.design1');
+   app.three = document.querySelector('.design2');
+   app.four = document.querySelector('.design3');
+   app.five = document.querySelector('.design4');
+   app.six = document.querySelector('.design5');
+   app.seven = document.querySelector('.design6');
+   app.eight = document.querySelector('.design7');
+   app.nine = document.querySelector('.design8');
+   app.ten = document.querySelector('.design9');
+   app.eleven = document.querySelector('.design10');
+   app.twelve = document.querySelector('.design11');
+   app.thirteen = document.querySelector('.design12');
+   app.fourteen = document.querySelector('.design13');
+   app.fifteen = document.querySelector('.design14');
+   app.sixteen = document.querySelector('.design15');
+   app.seventeen = document.querySelector('.design16');
+   app.eighteen = document.querySelector('.design17');
+   app.nineteen = document.querySelector('.design18');
+   app.twenty = document.querySelector('.design19');
+   app.twentyone = document.querySelector('.design20');
+   app.twentytwo = document.querySelector('.design21');
+   app.twentythree = document.querySelector('.design22');
+   app.twentyfour = document.querySelector('.design23');
+   
+   // event listeners that wait for user to click on a specific shoe picture, which will append the correct info to the DOM
+   app.one.addEventListener('click', () => {
+      // calls the showDetail function with passed info for manipulation
+      app.showDetails(app.gallerys[0]);
+   });
+   
+   app.two.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[1]);
+      console.log('second click');
+   });
+   
+   app.three.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[2]);
+      console.log('second click');
+   });
+   
+   app.four.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[3]);
+      console.log('second click');
+   });
+   
+   app.five.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[4]);
+      console.log('second click');
+   });
+   
+   app.six.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[5]);
+      console.log('second click');
+   });
+   
+   app.seven.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[6]);
+      console.log('second click');
+   });
+   
+   app.eight.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[7]);
+      console.log('second click');
+   });
+   
+   app.nine.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[8]);
+      console.log('second click');
+   });
+   
+   app.ten.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[9]);
+      console.log('second click');
+   });
+   
+   app.eleven.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[10]);
+      console.log('second click');
+   });
+   
+   app.twelve.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[11]);
+      console.log('second click');
+   });
+   
+   app.thirteen.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[12]);
+      console.log('second click');
+   });
+   
+   app.fourteen.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[13]);
+      console.log('second click');
+   });
+   
+   app.fifteen.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[14]);
+      console.log('second click');
+   });
+   
+   app.sixteen.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[15]);
+      console.log('second click');
+   });
+   
+   app.seventeen.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[16]);
+      console.log('second click');
+   });
+   
+   app.eighteen.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[17]);
+      console.log('second click');
+   });
+   
+   app.nineteen.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[18]);
+      console.log('second click');
+   });
+   
+   app.twenty.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[19]);
+      console.log('second click');
+   });
+   
+   app.twentyone.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[20]);
+      console.log('second click');
+   });
+   
+   app.twentytwo.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[21]);
+      console.log('second click');
+   });
+   
+   app.twentythree.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[22]);
+      console.log('second click');
+   });
+   
+   app.twentyfour.addEventListener('click', ()=>{
+      app.showDetails(app.gallerys[23]);
+      console.log('second click');
+   });
 
-   // app.addCart.addEventListener('click', () => {
-   //    console.log('hey you added to the e-cart!')
-   // });
+   // connecting to a html element 
+   app.shoeData = document.querySelector('.shoeData');
+   // html element creation 
+   app.newData = document.createElement('li');
 
+   // function that appends data of specific shoe details
+   app.showDetails = (data) => {
+      // changing the innerHTML with new content      
+      app.newData.innerHTML = `
+         <h2>${data.name}</h2>
+         <div class="modalInfoBox">
+            <div class="modalPicBox">
+               <img src="${data.images[0]}" alt="image for ${data.name}">
+            </div>
+            <div class="modalPicBox">
+               <img src="${data.images[1]}" alt="image for ${data.name}">
+            </div>
+            <div class="modalPicBox">
+               <img src="${data.images[2]}" alt="image for ${data.name}">
+            </div>
+            <div class="modalPicBox">
+               <img src="${data.images[3]}" alt="image for ${data.name}">
+            </div>
+         </div> 
+         <h3>Description:</h3>
+         <p>${data.description}</p>
+      `;
+      // inserting the newData as a child to the html element section
+      app.shoeData.appendChild(app.newData);
+   };
+   
+
+   // when user clicks on the 'x' from the modal it will remove modal from DOM
+   app.span.addEventListener('click', () => {
+      // hiding the modal from the user
+      app.modal.style.display = 'none';
+      // emptying the content in the newData variable
+      app.newData.innerHTML = ``;
+   });
 };
-
 
 // callRestore function that appends the restoration gallery to DOM.
 app.callRestore = () => {
@@ -763,8 +787,13 @@ app.callRestore = () => {
       secondListItem.classList.add('restored');
       // inserting content into the innerHTML of the element
       secondListItem.innerHTML = `
-      <div class="restorePic">
-      <img src="${fix.mainImage}" alt="${fix.name}"
+      <div class="beforeAfterBox">
+         <div class="restorePic">
+            <img src="${fix.beforeImage}" alt="${fix.name}">
+         </div>
+         <div class="restorePic">
+         <img src="${fix.afterImage}" alt="${fix.name}">
+         </div>
       </div>
       <div class="restoreName">
       <h2 class="customName">${fix.name}</h2>
@@ -786,37 +815,65 @@ app.callRestore = () => {
    });
 };
 
-// addListeners function that is called by app.init(). This sets off the other functions onces user enters page.
-app.addListeners = () => {
-   // calls 2 functions that append data to DOM.
-   app.galleryAppend();
-   app.callRestore();
+// function that appends data from cleaning array.
+app.cleaningAppend = () => {
+   // forEach method on the array of restorations
+   app.cleaning.forEach((cleaned)=>{
+      // html element creation storing in variable declaration 
+      const thirdListItem = document.createElement('li');
+      // adding a className to the li element
+      thirdListItem.classList.add('cleaned');
+      // inserting content into the innerHTML of the element
+      thirdListItem.innerHTML = `
+      
+      <div class="beforeAfterBox">
+         <div class="cleanPic">
+            <img src="${cleaned.beforeImage}" alt="${cleaned.name}">
+         </div>
+         <div class="cleanPic">
+            <img src="${cleaned.afterImage}" alt="${cleaned.name}">
+         </div>
+      </div>
+      <section class="cleanedBox> 
+         <div class="cleanName">
+            <h2 class="customName">${cleaned.name}</h2>
+         </div>
+         <div class="cleanDescrip">
+            <p>${cleaned.description}</p>
+         </div>
+         <div class="serviceButtons">
+            <button>
+               <a href="#" class="addCart">Add to cart</a>
+            </button>
+            <button>
+               <a href="contact.html">Contact Us</a>
+            </button>
+         </div>
+      </section>
+      `
+      // appending the li element as a child to the section targeted.
+      app.cleaned.appendChild(thirdListItem);
+   });
 };
 
+// addListeners function that is called by app.init(). This sets off the other functions onces user enters page.
+app.addListeners = () => {
+   // calls 3 functions that append separate sections of data to DOM.
+   app.galleryAppend();
+   app.callRestore();
+   app.cleaningAppend();
+};
+
+// app.init function that starts the application
 app.init = () => {
    app.addListeners();
    console.log('init');
 };
 
+// initial function call to start the web app
 app.init();
 
 
-//      firstListItem.innerHTML = `
-      // <div class="designPic">
-      // <img src="${design.mainImage}" alt="${design.name}"
-      // </div>
-      // <div class="designName">
-      // <h2 class="customName">${design.name}</h2>
-      // </div>
-      // <div class="designDescrip">
-      // <p>${design.description}</p>
-      // </div>
-      // <div class="serviceButtons">
-      // <button>
-      // <a href="#" class="addCart">Add to cart</a>
-      // </button>
-      // <button>
-      //    <a href="contact.html">Contact Us</a>
-      // </button>
-      // </div>
-      // `
+
+// galleryAppend will append the data into the DOM and also mark the specific class on each one.
+// user will then click on the image, which has an onclick that should determine which

@@ -27,6 +27,39 @@ header {
    
 }
 
+.restorationsBox {
+   width: 100%;
+   .restored {
+      .beforeAfterBox {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+      }
+      .restorePic {
+         width: 40%;
+         margin: 0 auto;
+         img {
+            width: 100%;
+         }
+      }
+   }
+}
+
+
+.cleaned {
+   .beforeAfterBox {
+      display:flex;
+      flex-direction: row;
+      .cleanPic {
+         width: 100%;
+         margin: 0 auto;
+         img {
+            width: 100%;
+         }
+      }
+   }
+}
+
 .modal {
    display: none;
    /* Hidden by default */
@@ -73,3 +106,21 @@ header {
    text-decoration: none;
    cursor: pointer;
 }
+
+.shoeData {
+   width: 80%;
+   margin: 0 auto;
+}
+
+   .modalInfoBox {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .modalPicBox {
+         width: 50%;
+         margin: 0 auto;
+         img {
+            width: 100%;
+         }
+      }
+   }

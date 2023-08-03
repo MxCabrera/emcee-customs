@@ -1,5 +1,8 @@
 main {
    // height: 100vh;
+   .about {
+      height: 70vh;
+   }
    h2 {
       text-align: center;
       font-size: 2rem;
@@ -8,6 +11,21 @@ main {
 
    .howToOrder {
       background-color: lightgray;
+      height: 80vh;
+      padding-top: 3rem;
+      .wrapper {
+         h4 {
+            text-align: center;
+         }
+         h3,
+         h4 {
+            font-size: 2rem;
+         }
+         .restoreContainer {
+            width: 60%;
+            margin: 0 auto;
+         }
+      }
    }
 
    .instaFeed {
@@ -15,6 +33,7 @@ main {
       height: 100vh;
       h3 {
          font-size: 3rem;
+         text-align: center;
          a {
             color: black;
          }

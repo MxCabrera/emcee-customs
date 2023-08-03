@@ -1,11 +1,44 @@
-h1 {
-   font-size: 3rem;
+.serviceHeader {
+   height: 100vh;
+   background-image: url(../assets/custom/NikeBikeShoe/IMG_3625.JPG);
+   background-size: cover;
+   background-position: center;
+   padding-top: 2rem;
+   h1 {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 1px 1px 1px black;
+   }
 }
 
 main {
+   .instructBox {
+      padding-top: 2rem;
+      h3 {
+         text-align: center;
+         font-size: 1.5rem;
+      }
+   }
    .serviceContainer {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem;
       .services {
          width: 50%;
+      }
+   }
+}
+.serviceName,
+.serviceDescrip {
+   width: 80%;
+   margin: 1rem auto;
+}
+.serviceButtons {
+   margin: 1rem auto;
+   text-align: center;
+   button {
+      a {
+         color: white;
       }
    }
 }

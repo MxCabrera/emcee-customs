@@ -271,11 +271,13 @@ li {
 
 a {
   text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Archivo", sans-serif;
 }
 
@@ -353,7 +355,7 @@ p {
 
 .homeHeader {
   height: 100vh;
-  background-image: url(../assets/);
+  background-image: url(../assets/custom/RoseBoots/IMG_2555.JPG);
   background-size: cover;
   background-position: center;
 }
@@ -398,6 +400,9 @@ p {
   transition: 1s all ease;
 }
 
+main .about {
+  height: 70vh;
+}
 main h2 {
   text-align: center;
   font-size: 2rem;
@@ -405,6 +410,19 @@ main h2 {
 }
 main .howToOrder {
   background-color: lightgray;
+  height: 80vh;
+  padding-top: 3rem;
+}
+main .howToOrder .wrapper h4 {
+  text-align: center;
+}
+main .howToOrder .wrapper h3,
+main .howToOrder .wrapper h4 {
+  font-size: 2rem;
+}
+main .howToOrder .wrapper .restoreContainer {
+  width: 60%;
+  margin: 0 auto;
 }
 main .instaFeed {
   margin-top: 3rem;
@@ -412,6 +430,7 @@ main .instaFeed {
 }
 main .instaFeed h3 {
   font-size: 3rem;
+  text-align: center;
 }
 main .instaFeed h3 a {
   color: black;
@@ -451,6 +470,46 @@ header .gallerySection .title {
   width: 100%;
 }
 .galleryContainer .design .designPic img {
+  width: 100%;
+}
+
+.restorationsBox {
+  width: 100%;
+}
+.restorationsBox .restored .beforeAfterBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.restorationsBox .restored .restorePic {
+  width: 40%;
+  margin: 0 auto;
+}
+.restorationsBox .restored .restorePic img {
+  width: 100%;
+}
+
+.cleaned .beforeAfterBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.cleaned .beforeAfterBox .cleanPic {
+  width: 100%;
+  margin: 0 auto;
+}
+.cleaned .beforeAfterBox .cleanPic img {
   width: 100%;
 }
 
@@ -501,12 +560,103 @@ header .gallerySection .title {
   cursor: pointer;
 }
 
-h1 {
-  font-size: 3rem;
+.shoeData {
+  width: 80%;
+  margin: 0 auto;
 }
 
+.modalInfoBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.modalInfoBox .modalPicBox {
+  width: 50%;
+  margin: 0 auto;
+}
+.modalInfoBox .modalPicBox img {
+  width: 100%;
+}
+
+.contactHeader {
+  height: 100vh;
+  background-image: url(../assets/custom/AF1Paisley/IMG_3792.JPG);
+  background-size: cover;
+  background-position: center;
+}
+.contactHeader h1 {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  padding-top: 2rem;
+}
+
+.contactForm {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.contactForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.serviceHeader {
+  height: 100vh;
+  background-image: url(../assets/custom/NikeBikeShoe/IMG_3625.JPG);
+  background-size: cover;
+  background-position: center;
+  padding-top: 2rem;
+}
+.serviceHeader h1 {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+main .instructBox {
+  padding-top: 2rem;
+}
+main .instructBox h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+main .serviceContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1rem;
+}
 main .serviceContainer .services {
   width: 50%;
+}
+
+.serviceName,
+.serviceDescrip {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.serviceButtons {
+  margin: 1rem auto;
+  text-align: center;
+}
+.serviceButtons button a {
+  color: white;
 }
 
 .eCart,

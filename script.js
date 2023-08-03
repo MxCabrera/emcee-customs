@@ -12,9 +12,9 @@ app.hamburger.addEventListener('click', () => {
 });
 
 // on click to travel to e-cart page IF we choose to create a modal pop up instead of a html page
-app.cart.addEventListener('click', () => {
-   console.log('hey you reached the e-cart!')
-});
+// app.cart.addEventListener('click', () => {
+//    console.log('hey you reached the e-cart!')
+// });
 
 
 app.addListeners = () => {

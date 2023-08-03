@@ -1,0 +1,25 @@
+.contactHeader {
+   height: 100vh;
+   background-image: url(../assets/custom/AF1Paisley/IMG_3792.JPG);
+   background-size: cover;
+   background-position: center;
+
+   h1 {
+      font-size: 3rem;
+      color: white; 
+      text-shadow: 1px 1px 1px black;
+      padding-top: 2rem;
+   }
+}
+
+.contactForm {
+   margin-top: 4rem;
+   margin-bottom: 4rem;
+   form {
+      display: flex;
+      flex-direction: column;
+      width:60%;
+      margin: 0 auto;
+      
+   }
+}
