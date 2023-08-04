@@ -50,3 +50,35 @@ main {
    padding: 1rem;
    border: none;
 }
+
+.productBox {
+   .product {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      // justify-content: space-between;
+      .rightside {
+         width: 30%;
+         button {
+            position:absolute;
+            bottom: 0;
+            right: 0;
+         }
+
+      }
+      .leftside {
+         width: 70%;
+      }
+   }
+}
+
+.finalTotal {
+   text-align: right;
+   padding-right: 8rem;
+}
+
+.emptyCart {
+   h4 {
+      text-align: center;;
+   }
+}

@@ -688,6 +688,37 @@ main .serviceContainer .services {
   border: none;
 }
 
+.productBox .product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+.productBox .product .rightside {
+  width: 30%;
+}
+.productBox .product .rightside button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.productBox .product .leftside {
+  width: 70%;
+}
+
+.finalTotal {
+  text-align: right;
+  padding-right: 8rem;
+}
+
+.emptyCart h4 {
+  text-align: center;
+}
+
 @media screen and (min-width: 600px) {
   .nav__link {
     display: block;
