@@ -1,22 +1,38 @@
 
-header {
-   .gallerySection {
-      .title {
-         text-align: center;
+.gallerySection {
+   h2 {
+      font-size: 1rem;
+      padding: .5rem;
+      background-color: grey;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      width: 100%;
+      border: 1px solid black;
+      text-align: center;
+      &:hover {
+         background-color: black;
+         color: white;
       }
    }
 }
 
+.clickMe {
+   margin-bottom: 1rem;
+}
+
 .galleryContainer {
+   border: .5rem solid grey;
+   margin-bottom: 1rem;
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
    .design {
-      width: 33%;
+      width: 100%;
       margin: 0 auto;
+      
 
       .designPic {
-         margin: 0 5px;
+         margin: 0;
          width: 100%;
          img {
             width: 100%;
@@ -28,15 +44,18 @@ header {
 }
 
 .restorationsBox {
+   border: .5rem solid grey;
    width: 100%;
+   margin-bottom: 1rem;
    .restored {
       .beforeAfterBox {
          display: flex;
          flex-direction: row;
          justify-content: space-between;
+         flex-wrap: wrap;
       }
       .restorePic {
-         width: 40%;
+         width: 100%;
          margin: 0 auto;
          img {
             width: 100%;
@@ -47,9 +66,12 @@ header {
 
 
 .cleaned {
+   border: .5rem solid grey;
+   margin-bottom: 1rem;
    .beforeAfterBox {
       display:flex;
       flex-direction: row;
+      flex-wrap: wrap;
       .cleanPic {
          width: 100%;
          margin: 0 auto;
@@ -87,9 +109,9 @@ header {
 .modal-content {
    background-color: #fefefe;
    margin: auto;
-   padding: 20px;
+   padding: 10px;
    border: 1px solid #888;
-   width: 80%;
+   width: 90%;
 }
 
 /* The Close Button */
@@ -117,7 +139,7 @@ header {
       flex-direction: row;
       flex-wrap: wrap;
       .modalPicBox {
-         width: 50%;
+         width: 100%;
          margin: 0 auto;
          img {
             width: 100%;

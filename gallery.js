@@ -745,7 +745,7 @@ app.galleryAppend = () => {
    app.showDetails = (data) => {
       // changing the innerHTML with new content      
       app.newData.innerHTML = `
-         <h2>${data.name}</h2>
+         <h3>${data.name}</h3>
          <div class="modalInfoBox">
             <div class="modalPicBox">
                <img src="${data.images[0]}" alt="image for ${data.name}">

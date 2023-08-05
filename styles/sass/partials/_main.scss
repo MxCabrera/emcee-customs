@@ -24,7 +24,7 @@ main {
          }
       }
    }
-   h2 {
+   .aboutMe {
       text-align: center;
       font-size: 2rem;
       padding-top: 1rem;
@@ -53,6 +53,7 @@ main {
             ol li {
                font-family: 'Roboto',sans-serif;
                list-style-type: decimal;
+               font-size: 1.3rem;
             }
          }
       }

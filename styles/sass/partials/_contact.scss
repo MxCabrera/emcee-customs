@@ -1,5 +1,5 @@
 .contactHeader {
-   height: 100vh;
+   height: 50vh;
    background-image: url(../assets/custom/AF1Paisley/IMG_3792.JPG);
    background-size: cover;
    background-position: center;
@@ -7,9 +7,35 @@
    h1 {
       font-size: 3rem;
       color: white; 
+      font-weight: 700;
       text-shadow: 1px 1px 1px black;
       padding-top: 2rem;
       margin-top: 0;
+   }
+   p {
+      font-size: 1.5rem;
+   }
+}
+
+main {
+   .update {
+      background-color: grey;
+      padding: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      p {
+         font-size: 1.1rem;
+      }
+      .signature {
+         text-align: right;
+         margin-top: .5rem;
+      }
+   }
+   .letsChat {
+      h2 {
+         text-align: center;
+         margin-bottom: 1.5rem;
+      }
    }
 }
 
@@ -19,7 +45,7 @@
    form {
       display: flex;
       flex-direction: column;
-      width:60%;
+      width:80%;
       margin: 0 auto;
       
    }

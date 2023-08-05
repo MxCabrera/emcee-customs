@@ -13,32 +13,46 @@
 
 main {
    .instructBox {
+      width: 100%;
       padding-top: 2rem;
+      padding-bottom: 2rem;
       h3 {
+         padding-bottom: 2rem;
          text-align: center;
          font-size: 1.5rem;
       }
+      // ol li {
+      //    list-style-type: decimal;
+      // }
    }
    .serviceContainer {
       display: flex;
       flex-wrap: wrap;
-      margin: 1rem;
       .services {
-         width: 50%;
+         margin-bottom: 1rem;
+         background-color: grey;
+         width: 100%;
+         .serviceName {
+            margin: 1rem;
+         }
+         .customName {
+            font-size: 1.5rem;
+            text-align: left;
+         }
       }
    }
 }
 .serviceName,
 .serviceDescrip {
-   width: 80%;
-   margin: 1rem auto;
+   margin: 1rem;
 }
 .serviceButtons {
    margin: 1rem auto;
    text-align: center;
    button {
+      padding: .5rem;
       a {
-         color: white;
+         color: black;
       }
    }
 }

@@ -299,6 +299,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   padding: 17px 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -436,7 +437,7 @@ main .about .aboutSection p {
   padding-right: 0.9rem;
   margin-top: 1rem;
 }
-main h2 {
+main .aboutMe {
   text-align: center;
   font-size: 2rem;
   padding-top: 1rem;
@@ -465,6 +466,7 @@ main .howToOrder .wrapper .restoreContainer {
 main .howToOrder .wrapper .restoreContainer ol li {
   font-family: "Roboto", sans-serif;
   list-style-type: decimal;
+  font-size: 1.3rem;
 }
 main .instaFeed {
   margin-top: 3rem;
@@ -492,6 +494,36 @@ main .testimonials .reviewBox {
 footer {
   background-color: black;
 }
+footer .updateBox {
+  padding-top: 3rem;
+}
+footer .updateBox h4 {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+}
+footer .contactBox {
+  border-top: 0.2px solid white;
+  padding-bottom: 1rem;
+}
+footer .contactBox h4, footer .contactBox p, footer .contactBox a {
+  color: white;
+}
+footer .contactBox h4 {
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+footer .contactBox a {
+  display: block;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background-color: grey;
+}
+footer .copyright {
+  border-top: 0.2px solid white;
+}
 footer p {
   padding: 20px 0;
   text-align: center;
@@ -499,11 +531,28 @@ footer p {
   text-transform: uppercase;
 }
 
-header .gallerySection .title {
+.gallerySection h2 {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: grey;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  border: 1px solid black;
   text-align: center;
+}
+.gallerySection h2:hover {
+  background-color: black;
+  color: white;
+}
+
+.clickMe {
+  margin-bottom: 1rem;
 }
 
 .galleryContainer {
+  border: 0.5rem solid grey;
+  margin-bottom: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -515,11 +564,11 @@ header .gallerySection .title {
       flex-wrap: wrap;
 }
 .galleryContainer .design {
-  width: 33%;
+  width: 100%;
   margin: 0 auto;
 }
 .galleryContainer .design .designPic {
-  margin: 0 5px;
+  margin: 0;
   width: 100%;
 }
 .galleryContainer .design .designPic img {
@@ -527,7 +576,9 @@ header .gallerySection .title {
 }
 
 .restorationsBox {
+  border: 0.5rem solid grey;
   width: 100%;
+  margin-bottom: 1rem;
 }
 .restorationsBox .restored .beforeAfterBox {
   display: -webkit-box;
@@ -540,15 +591,21 @@ header .gallerySection .title {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .restorationsBox .restored .restorePic {
-  width: 40%;
+  width: 100%;
   margin: 0 auto;
 }
 .restorationsBox .restored .restorePic img {
   width: 100%;
 }
 
+.cleaned {
+  border: 0.5rem solid grey;
+  margin-bottom: 1rem;
+}
 .cleaned .beforeAfterBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -557,6 +614,8 @@ header .gallerySection .title {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .cleaned .beforeAfterBox .cleanPic {
   width: 100%;
@@ -593,9 +652,9 @@ header .gallerySection .title {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #888;
-  width: 80%;
+  width: 90%;
 }
 
 /* The Close Button */
@@ -630,7 +689,7 @@ header .gallerySection .title {
       flex-wrap: wrap;
 }
 .modalInfoBox .modalPicBox {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 .modalInfoBox .modalPicBox img {
@@ -638,7 +697,7 @@ header .gallerySection .title {
 }
 
 .contactHeader {
-  height: 100vh;
+  height: 50vh;
   background-image: url(../assets/custom/AF1Paisley/IMG_3792.JPG);
   background-size: cover;
   background-position: center;
@@ -646,9 +705,31 @@ header .gallerySection .title {
 .contactHeader h1 {
   font-size: 3rem;
   color: white;
+  font-weight: 700;
   text-shadow: 1px 1px 1px black;
   padding-top: 2rem;
   margin-top: 0;
+}
+.contactHeader p {
+  font-size: 1.5rem;
+}
+
+main .update {
+  background-color: grey;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+main .update p {
+  font-size: 1.1rem;
+}
+main .update .signature {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+main .letsChat h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .contactForm {
@@ -663,7 +744,7 @@ header .gallerySection .title {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -681,9 +762,12 @@ header .gallerySection .title {
 }
 
 main .instructBox {
+  width: 100%;
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 main .instructBox h3 {
+  padding-bottom: 2rem;
   text-align: center;
   font-size: 1.5rem;
 }
@@ -693,24 +777,34 @@ main .serviceContainer {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 1rem;
 }
 main .serviceContainer .services {
-  width: 50%;
+  margin-bottom: 1rem;
+  background-color: grey;
+  width: 100%;
+}
+main .serviceContainer .services .serviceName {
+  margin: 1rem;
+}
+main .serviceContainer .services .customName {
+  font-size: 1.5rem;
+  text-align: left;
 }
 
 .serviceName,
 .serviceDescrip {
-  width: 80%;
-  margin: 1rem auto;
+  margin: 1rem;
 }
 
 .serviceButtons {
   margin: 1rem auto;
   text-align: center;
 }
+.serviceButtons button {
+  padding: 0.5rem;
+}
 .serviceButtons button a {
-  color: white;
+  color: black;
 }
 
 .eCart,
