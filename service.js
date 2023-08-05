@@ -16,6 +16,8 @@ app.hamburger.addEventListener('click', () => {
    app.navLink.classList.toggle('hide');
 });
 
+app.userCostArray = []
+
 // services array that contain information & prices of each product.
 app.services = [
    {
@@ -95,18 +97,49 @@ app.hideCart = () => {
    app.modal.style.display = 'none';
 }
 
+app.finalCost = document.querySelector('.finalCost');
+
+
+app.addCost = () => {
+   console.log(app.userCostArray);
+   let sum = 0;
+   for (let i=0; i < app.userCostArray.length; i++) {
+      sum+= app.userCostArray[i];
+      app.finalCost.innerHTML = `${sum}`
+   };
+}
+
+
+app.minusCost = (data) => {
+   let sum = 0;
+   const toDelete = data;
+   console.log(data);
+   const newArray = app.userCostArray.filter(item => !toDelete.includes(item))
+   // app.userCostArray.remove(data);
+   for (let i = 0; i < app.userCostArray.length; i++) {
+      sum -= app.userCostArray[i];
+      console.log(sum);
+      app.finalCost.innerHTML = `${sum}`
+      return sum;
+   };
+   console.log(newArray);
+}
+
+
+
 app.addProduct = (cartCounter, data, newData) => {
    if (app.serviceModal.innerHTML == '\n         <div class="emptyCart">\n            <h4>Theres nothing in your cart</h4>\n         </div>\n      ') {
       // clear the text in the html element.
       app.serviceModal.innerHTML = '';
    };
-
+   console.log(data.cost);
    // adding a new product in the user cart.
    newData.innerHTML = `
          <div class="product${cartCounter} product">
             <div class="leftside">
                <h1>- ${data.name}</h1>
                <p>Price:$${data.cost}.00</p>
+               <p class="hidden">${data.cost}</p>
             </div>
             <div class="rightside">
                <button class="remove${cartCounter}">remove</button>
@@ -114,6 +147,9 @@ app.addProduct = (cartCounter, data, newData) => {
          </div>
 
          `;
+   app.userCostArray.push(data.cost);
+   console.log(app.userCostArray);
+   app.addCost()
    // inserting the product as a child to the parent element.
    cartCounter++;
    app.serviceModal.appendChild(app.newData);
@@ -253,6 +289,7 @@ app.addListeners = () => {
 
    app.removeProduct = () => {
       // connecting the productBox for eventual deletion 
+      app.test = document.querySelector('.hidden');
       app.deletedOne = document.querySelector('.productBox1');
       app.deletedTwo = document.querySelector('.productBox2');
       app.deletedThree = document.querySelector('.productBox3');
@@ -266,38 +303,47 @@ app.addListeners = () => {
       // when user clicks, remove the box that corresponds to what user removed. 
       app.removeItemOne.addEventListener('click', () => {
          app.deletedOne.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemTwo.addEventListener('click', () => {
          app.deletedTwo.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemThree.addEventListener('click', () => {
          app.deletedThree.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemFour.addEventListener('click', () => {
          app.deletedFour.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemFive.addEventListener('click', () => {
          app.deletedFive.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemSix.addEventListener('click', () => {
          app.deletedSix.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemSeven.addEventListener('click', () => {
          app.deletedSeven.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemEight.addEventListener('click', () => {
          app.deletedEight.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
       app.removeItemNine.addEventListener('click', () => {
          app.deletedNine.remove();
+         app.minusCost(app.test.innerHTML);
          app.emptyCart();
       });
    }
@@ -334,54 +380,6 @@ app.addListeners = () => {
       // remove product in cart if user clicks.
       app.removeProduct();
 
-      // // connecting the productBox for eventual deletion 
-      // app.deletedOne = document.querySelector('.productBox1');
-      // app.deletedTwo = document.querySelector('.productBox2');
-      // app.deletedThree = document.querySelector('.productBox3');
-      // app.deletedFour = document.querySelector('.productBox4');
-      // app.deletedFive = document.querySelector('.productBox5');
-      // app.deletedSix = document.querySelector('.productBox6');
-      // app.deletedSeven = document.querySelector('.productBox7');
-      // app.deletedEight = document.querySelector('.productBox8');
-      // app.deletedNine = document.querySelector('.productBox9');
-      
-      // // when user clicks, remove the box that corresponds to what user removed. 
-      // app.removeItemOne.addEventListener('click', () => {
-      //    app.deletedOne.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemTwo.addEventListener('click', () => {
-      //    app.deletedTwo.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemThree.addEventListener('click', () => {
-      //    app.deletedThree.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemFour.addEventListener('click', () => {
-      //    app.deletedFour.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemFive.addEventListener('click', () => {
-      //    app.deletedFive.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemSix.addEventListener('click', () => {
-      //    app.deletedSix.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemSeven.addEventListener('click', () => {
-      //    app.deletedSeven.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemEight.addEventListener('click', () => {
-      //    app.deletedOne.remove();
-      //    app.emptyCart();
-      // });
-      // app.removeItemNine.addEventListener('click', () => {
-      //    app.deletedNine.remove();
-      //    app.emptyCart();
-      // });
    };
 };
 

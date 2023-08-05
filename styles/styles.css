@@ -286,9 +286,12 @@ p {
 }
 
 .nav {
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: sticky;
+  top: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -315,18 +318,19 @@ p {
 
 .hamburger .line {
   display: block;
-  width: 37px;
-  height: 5px;
-  margin-bottom: 8px;
+  width: 24px;
+  height: 3px;
+  margin-bottom: 5px;
   background-color: black;
 }
 
 .nav__link {
   position: fixed;
   width: 100%;
-  top: 5rem;
+  top: 4.9rem;
   left: 0;
   background-color: white;
+  border-top: 0.5px solid black;
 }
 
 .nav__link a {
@@ -365,14 +369,16 @@ p {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  font-size: 6rem;
+  font-size: 4rem;
   text-shadow: 1px 1px 1px black;
-  margin: 0;
-  padding-top: 14rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  padding-top: 9rem;
 }
 .homeHeader p {
   text-align: center;
-  font-size: 3rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   text-shadow: 1px 1px 1px black;
   color: rgb(235, 231, 231);
 }
@@ -408,26 +414,33 @@ main .about .aboutSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 main .about .aboutSection .aboutPic {
-  width: 30%;
+  width: 90%;
+  margin: 0 auto;
 }
 main .about .aboutSection .aboutPic img {
   width: 100%;
 }
 main .about .aboutSection p {
-  width: 70%;
-  padding-left: 2rem;
-  padding-right: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 0.9rem;
+  margin-top: 1rem;
 }
 main h2 {
   text-align: center;
   font-size: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 main .howToOrder {
   background-color: lightgray;
@@ -441,19 +454,39 @@ main .howToOrder .wrapper h3,
 main .howToOrder .wrapper h4 {
   font-size: 2rem;
 }
+main .howToOrder .wrapper h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 main .howToOrder .wrapper .restoreContainer {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
+}
+main .howToOrder .wrapper .restoreContainer ol li {
+  font-family: "Roboto", sans-serif;
+  list-style-type: decimal;
 }
 main .instaFeed {
   margin-top: 3rem;
 }
 main .instaFeed h3 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 main .instaFeed h3 a {
   color: black;
+}
+main .testimonials {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+main .testimonials h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+main .testimonials .reviewBox {
+  width: 90%;
+  margin: 0 auto;
 }
 
 footer {
@@ -717,6 +750,10 @@ main .serviceContainer .services {
 
 .emptyCart h4 {
   text-align: center;
+}
+
+.hidden {
+  display: none;
 }
 
 @media screen and (min-width: 600px) {

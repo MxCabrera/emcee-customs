@@ -1,5 +1,8 @@
 .nav {
+   background-color: white;
    display: flex;
+   position:sticky;
+   top:0;
    justify-content: space-between;
    align-items: center;
    padding: 17px 0;
@@ -22,18 +25,19 @@
 
 .hamburger .line {
    display: block;
-   width: 37px;
-   height: 5px;
-   margin-bottom: 8px;
+   width: 24px;
+   height: 3px;
+   margin-bottom: 5px;
    background-color: black;
 }
 
 .nav__link {
    position: fixed;
    width: 100%;
-   top: 5rem;
+   top: 4.9rem;
    left: 0;
    background-color: white;
+   border-top: .5px solid black;
 }
 
 .nav__link {
